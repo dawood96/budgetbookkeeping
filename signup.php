@@ -1,7 +1,6 @@
 <?php 
     // this will include the authcontroller where the info will be checked
     require_once 'controllers/authoController.php';
-
 ?>
 
 <!DOCTYPE html>

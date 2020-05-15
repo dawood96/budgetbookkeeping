@@ -1,0 +1,23 @@
+
+/* 
+@author David Shammas
+@version 5/15/2020
+Sign Up and Log In page CSS 
+*/
+.form-div {
+    margin: 50px auto 50px;
+    padding: 25px 15px 10px 15px;
+    border: 1px solid #80ced8;
+    font-size: 1.1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  }
+
+form p {
+    font-size: .89em;
+}
+  
+.form-div.login {
+    margin-top: 100px;
+}

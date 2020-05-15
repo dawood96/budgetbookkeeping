@@ -1,3 +1,29 @@
+<?php 
+//start the session
+session_start();
+
+
+//check if the session is active
+if(isset($_GET['Well'])){
+
+    if(isset($_SESSION['U_D'])){
+        echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
+        echo $_SESSION['FName'];
+    }
+    else {
+        header("location: login.php");
+        exit();
+    }
+} else {
+    header("location: login.php");
+    exit();
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,9 +67,8 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center">
-        <img class="rounded mx-auto d-block img-thumbnail" src="img/newyork.jpg" alt="">
-    </div>
+
+
 
 
 

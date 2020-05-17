@@ -4,6 +4,7 @@ session_start();
 
 
 //check if the session is active
+//THIS IS A TEST!!
 if(isset($_GET['Well'])){
 
     if(isset($_SESSION['U_D'])){

@@ -12,38 +12,9 @@
         <!-- Font-awesome -->
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <!-- custom CSS file -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style.css">
         <style>
-            .centerDiv {
-                position: absolute;
-                top:130px;
-                left: 150px;
-                width:900px;
-
-            }
-            .rightDiv {
-                position: absolute;
-                top:100px;
-                right: 80px;
-                width:300px;
-                text-align: center;
-
-            }
-            aside > h4 {
-                margin: 0;
-            }
-            aside
-            { border: 1px outset black;
-              background-color: white; float: right;
-              width: 300px; margin: 5px;
-              padding: 20px; }
-            label{
-                position: relative;
-                left: 50px;
-                border: 1px outset black;
-                padding: 10px;
-                width:100px;
-            }
+           
 
         </style>
     </head>
@@ -85,24 +56,19 @@
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
         <div class="centerDiv">
-            <center><h4><b>Add Expenses</b></h4></center>
+            <h4><b>Add Expenses</b></h4>
             <br>
             <br>
 
-            <label>Amount</label><input type="text" id="first" size="10" autofocus style="border: 1px outset black;position:absolute;
-                                        background-color: white; right: 220px; width: 300px; margin: 5px;padding:10px;top:70px;"><br><br>
+            <label>Amount</label><input type="text" id="first" size="10" autofocus style=" right: 220px; width: 300px; margin: 5px; padding:10px; top:50px;"><br><br>
 
-            <label>Comment</label><input type="text" id="first" size="15" autofocus style="border: 1px outset black;position:absolute;
-                                         background-color: white; right: 220px; width: 300px; margin: 5px;padding:10px;top:140px;"><br><br>
+            <label>Comment</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:110px;"><br><br>
 
-            <label>date</label><input type="text" id="first" size="15" autofocus style="border: 1px outset black;position:absolute;
-                                      background-color: white; right: 220px; width: 300px; margin: 5px;padding:10px;top:210px;"><br><br>
+            <label>date</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:170px;"><br><br>
 
-            <label>Category</label><input type="text" id="first" size="15" autofocus style="border: 1px outset black;position:absolute;
-                                          background-color: white; right: 220px; width: 300px; margin: 5px;padding:10px;top:270px;"><br><br>
+            <label>Category</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:240px;"><br><br>
 
-            <label>Done</label><input type="text" id="first" size="15" autofocus style="border: 1px outset black;position:absolute;
-                                      background-color: white; right: 300px; width: 150px; margin: 5px;padding:10px;top:340px;"><br><br>
+            <label>Done</label><input type="text" id="first" size="15" autofocus style="right: 300px; width: 150px; margin: 5px;padding:10px;top:310px;"><br><br>
 
 
         </div>
@@ -113,6 +79,13 @@
             <aside> <h4>Shopping</h4> $ </aside>
             <aside> <h4></h4> $ </aside>
         </div>
+        
+        <h4><span class="favspan">
+            <b>Recent Expenses Transactions</b>
+            </span></h4>
+        
+        <div class="bottomDiv">
+            <p>Filler Text</p>
+        </div>
     </body>
 </html>
-

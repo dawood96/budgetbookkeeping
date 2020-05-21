@@ -1,205 +1,286 @@
 :root {
-  --input-padding-x: 1.5rem;
-  --input-padding-y: 0.75rem;
+    --input-padding-x: 1.5rem;
+    --input-padding-y: 0.75rem;
 }
 
 .navbar {
-  margin-bottom: 0;
-  background-color: #f4511e;
-  z-index: 9999;
-  border: 0;
-  font-size: 12px !important;
-  line-height: 1.42857143 !important;
-  letter-spacing: 4px;
-  border-radius: 0;
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
 }
 
 .navbar li a,
 .navbar .navbar-brand {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
-  color: #f4511e !important;
-  background-color: #fff !important;
+    color: #f4511e !important;
+    background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fff !important;
+    border-color: transparent;
+    color: #fff !important;
 }
 .navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 25px;
-  line-height: inherit;
-  white-space: nowrap;
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 25px;
+    line-height: inherit;
+    white-space: nowrap;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: rgb(243, 237, 237);
-}
+/*body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: rgb(243, 237, 237);
+}*/
 
 .box {
-  width: 500px;
-  padding: 40px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  background: #2a2828;
-  border-radius: 50px;
-  text-align: center;
-  transition: 0.25s;
-  margin-top: 100px;
+    width: 500px;
+    padding: 40px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    background: #2a2828;
+    border-radius: 50px;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px;
 }
 
 .box input[type="text"],
 .box input[type="password"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #f4511e;
-  padding: 10px 10px;
-  width: 250px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #f4511e;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
 .box h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .text-muted {
-  color: rgb(218, 204, 204) !important;
+    color: rgb(218, 204, 204) !important;
 }
 
 .box input[type="text"]:focus,
 .box input[type="password"]:focus {
-  width: 300px;
-  border-color: #2ecc71;
+    width: 300px;
+    border-color: #2ecc71;
 }
 
 .box input[type="submit"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #2ecc71;
-  padding: 14px 40px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  transition: 0.25s;
-  cursor: pointer;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
 .box input[type="submit"]:hover {
-  background: #2ecc71;
+    background: #2ecc71;
 }
 
 /* The following class are for styling the carousel */
 .carousel-inner img {
-  /*  make all photos black and white, uncomment the next 2 lines */
-  /* -webkit-filter: grayscale(90%); */
-  /* filter: grayscale(90%);  */
-  width: 100%; /* Set width to 100% */
-  margin: auto;
-  max-width: 100%;
-  height: auto;
+    /*  make all photos black and white, uncomment the next 2 lines */
+    /* -webkit-filter: grayscale(90%); */
+    /* filter: grayscale(90%);  */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /* this class is to scale the images in the carousel */
 .carousel-inner > .item > img {
-  width: 100%;
-  height: 750px;
+    width: 100%;
+    height: 750px;
 }
 
 .carousel-caption h3 {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 @media (max-width: 600px) {
-  .carousel-caption {
-    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-  }
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
 }
 
 .btn {
-  padding: 10px 30px;
-  margin: 0px;
-  background-color: #333;
-  color: #f1f1f1;
-  border-radius: 0;
-  transition: 0.2s;
-  display: inline;
+    padding: 10px 30px;
+    margin: 0px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: 0.2s;
+    display: inline;
 }
 
 /* On hover, the color of .btn will transition to white with black text */
 .btn:hover,
 .btn:focus {
-  border: 1px solid #333;
-  background-color: rgb(240, 239, 241);
-  color: #000;
+    border: 1px solid #333;
+    background-color: rgb(240, 239, 241);
+    color: #000;
 }
 
 /* DashBoard page */
 .img-thumbnail {
-  width: 30%;
-  height: 30%;
-  text-align: center;
-  margin-top: 10%;
-  border-radius: 30% !important;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    margin-top: 10%;
+    border-radius: 30% !important;
 }
 
+/*for income and expenses design*/
+.centerDiv {
+    position: absolute;
+    top:130px;
+    left: 150px;
+    width:900px;
 
+}
+/*for expenses design*/
+.rightDiv {
+    position: absolute;
+    top:100px;
+    right: 80px;
+    width:300px;
+    text-align: center;
 
+}
+/*for income,dashboard, and expenses design*/
+.bottomDiv {
+    position: absolute;
+    top:600px;
+    left: 150px;
+    width:1200px;
+    border: 1px outset black;
+}
 
+/*for expenses design*/
+.rightDiv aside > h4 {
+    margin: 0; 
+}
+/*for expenses design*/
+.rightDiv aside
+{ border: 1px outset black;
+  background-color: white; float: right;
+  width: 300px; margin: 5px;
+  padding: 20px; }
 
+/*Expenses and income design pages*/
+.centerDiv label{
+    position: relative;
+    left: 50px;
+    border: 1px outset black;
+    padding: 10px;
+    width:100px;
+}
+/*Expenses and income design pages*/
+.centerDiv input{
+    border: 1px outset black;position:absolute;
+    background-color: white;
+}
 
+/*Expenses and income design pages*/
+.centerDiv h4 b {
+    left: 500px;
+    position: absolute;
+}
+/*for income,dashboard, and expenses design*/
+.favspan {
+    left: 600px;
+    position: absolute;
+    top: 570px;
+}
+/*income design page*/
+.rightDiv2 {
+    position: absolute;
+    top:120px;
+    right: 200px;
+    width:300px;
+    text-align: center;
+}
+/*income design page*/
+.rightDiv2 aside > h4 {
+    margin: 0; 
+}
+/*income design page*/
+.rightDiv2 aside
+{ border: 1px outset black;
+  background-color: white; float: right;
+  width: 300px; margin: 5px;
+  padding: 40px; }
 
+/*dashboard design page*/
+.centerDiv2 {
+    position: absolute;
+    top:40px;
+    left: 150px;
+    width:1200px;
 
+}
 
+/*dashboard design page*/
+.centerDiv2 h4 b {
+    left: 500px; 
+    position: absolute;
+    top:250px;
+}
 
+/*dashboard design page*/
+.asidespan{
+    position:absolute;
+    left:90px;
+    top:300px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*dashboard design page*/
+.asidespan label{
+    margin: 0; 
+    border: 1px outset black;
+  background-color: white; float: right;
+  width: 300px; margin: 5px;
+  padding: 40px; 
+  text-align: center;
+}
 

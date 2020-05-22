@@ -56,6 +56,7 @@
 <input type="text" name="Subject" placeholder="Subject">
 <textarea name="message" placeholder="Message"></textarea>
 <button type="submit" name="submit"> SEND MAIL </button>
+        </form>
 </main>
 
 

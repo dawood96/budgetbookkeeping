@@ -1,15 +1,15 @@
 <?php 
+
 //start the session
 session_start();
-
 
 //check if the session is active
 //THIS IS A TEST!!
 if(isset($_GET['Well'])){
 
     if(isset($_SESSION['U_D'])){
-        echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
-        echo $_SESSION['FName'];
+        // echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
+        // echo $_SESSION['FName'];
     }
     else {
         header("location: login.php");
@@ -58,19 +58,132 @@ if(isset($_GET['Well'])){
             <a class="navbar-brand" href="index.html">LOGO</a>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a href="index.html">DASHBOARD</a></li>
-                    <li class="nav-item"><a href="about.html">ADD CASH</a></li>
-                    <li class="nav-item"><a href="project.html">ADD EXPENSES</a></li>
-                    <li class="nav-item"><a href="login.php">REPORTS</a></li>
-                    <li class="nav-item"><a href="contact.html">BRAINSTORMING</a></li>
-                    <li class="nav-item"><a href="contact.html">SIGN OUT</a></li>
+                    <li class="nav-item"><a href="dashboard.php">DASHBOARD</a></li>
+                    <li class="nav-item"><a href="#">ADD CASH</a></li>
+                    <li class="nav-item"><a href="#">ADD EXPENSES</a></li>
+                    <li class="nav-item"><a href="#">REPORTS</a></li>
+                    <li class="nav-item"><a href="#">BRAINSTORMING</a></li>
+                    <li class="nav-item"><a href="login.php">SIGN OUT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="container text-center">
+        <img class="rounded mx-auto d-block img img-thumbnail" src="img/newyork.jpg" alt="">
+    </div>
+    <div class="container text-center text-dark">
+        <h1> <?php  echo $_SESSION['FName'];?> <?php echo $_SESSION['LName'];  ?></h1>
+    </div>
+    <br>
 
+    <!-- Content Row -->
+    <div class="row">
 
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $_SESSION['income']; ?>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Number of transactions
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">96</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-dark">DataTables Example</h6>
+        </div>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered" >
+                    <thead >
+                        <tr>
+                            <th width="25%">Transaction ID</th>
+                            <th width="25%">amount</th>
+                            <th width="25%">date</th>
+                            <th width="25%">comment</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                        <th>Transaction ID</th>
+                            <th>amount</th>
+                            <th>date</th>
+                            <th>comment</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
 

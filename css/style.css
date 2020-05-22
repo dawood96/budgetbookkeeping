@@ -39,18 +39,18 @@
     white-space: nowrap;
 }
 
-/*body {
-    margin: 0;
+body {
+    margin: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 25px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 40px;
     line-height: 1.5;
-    color: #212529;
-    text-align: left;
+    color: #cecaca;
+    text-align: center;
     background-color: rgb(243, 237, 237);
-}*/
+}
 
 .box {
     width: 500px;
@@ -116,32 +116,6 @@
     background: #2ecc71;
 }
 
-/* The following class are for styling the carousel */
-.carousel-inner img {
-    /*  make all photos black and white, uncomment the next 2 lines */
-    /* -webkit-filter: grayscale(90%); */
-    /* filter: grayscale(90%);  */
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    max-width: 100%;
-    height: auto;
-}
-
-/* this class is to scale the images in the carousel */
-.carousel-inner > .item > img {
-    width: 100%;
-    height: 750px;
-}
-
-.carousel-caption h3 {
-    color: #fff !important;
-}
-
-@media (max-width: 600px) {
-    .carousel-caption {
-        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-}
 
 .btn {
     padding: 10px 30px;
@@ -169,6 +143,31 @@
     margin-top: 10%;
     border-radius: 30% !important;
 }
+
+/* this is for the dashboard card balance */
+.border-left-primary-balance {
+    border-left: .50rem solid #4e73df !important;
+    color: #4e73df;
+}
+
+/* this is for the dashboard card Income */
+.border-left-primary-income {
+    border-left: .50rem solid #15744c !important;
+    color: #15744c;
+}
+
+/* this is for the dashboard card expense */
+.border-left-primary-expense {
+    border-left: .50rem solid #da1313 !important;
+    color: #da1313;
+}
+
+/* this is for the dashboard card of the number of transactions */
+.border-left-primary-total{
+    border-left: .50rem solid #ffee03 !important;
+    color: #242307;
+}
+
 
 /*for income and expenses design*/
 .centerDiv {

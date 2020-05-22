@@ -23,7 +23,6 @@ if (isset($_POST['login'])){
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         $query = "SELECT * FROM csi3370_users WHERE email ='".$email."' ";
-
         $result = mysqli_query($conn, $query);
 
         if($row = mysqli_fetch_assoc($result)){
@@ -43,6 +42,13 @@ if (isset($_POST['login'])){
                 $_SESSION['Email'] = $row['email'];
                 $_SESSION['Password'] = $row['password'];
 
+                $query_info = "SELECT SUM(income), comment FROM csi3370_income_trans WHERE user_id ='".$_SESSION['U_D']."' ";
+                $result_info = mysqli_query($conn, $query_info);
+
+                if($row = mysqli_fetch_assoc($result_info)){
+                    $_SESSION['income'] = $row['SUM(income)'];
+                }
+
                 header ("location: dashboard.php?Well");
                 exit();
             }
@@ -59,7 +65,13 @@ if (isset($_POST['login'])){
     // header("location: login.php");
 }
 
+//create a connection object
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
+//if not connected
+if ($conn->connect_error){
+    die ('Database error:' . $conn->connect_error);
+}
 
 
 

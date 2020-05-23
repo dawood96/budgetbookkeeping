@@ -4,7 +4,6 @@
 session_start();
 
 //check if the session is active
-//THIS IS A TEST!!
 if(isset($_GET['Well'])){
 
     if(isset($_SESSION['U_D'])){
@@ -20,7 +19,7 @@ if(isset($_GET['Well'])){
     exit();
 }
 
-
+include 'controllers/dashController.php';
 
 
 ?>
@@ -88,7 +87,7 @@ if(isset($_GET['Well'])){
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -104,7 +103,7 @@ if(isset($_GET['Well'])){
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $_SESSION['income']; ?>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC; ?>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -121,7 +120,7 @@ if(isset($_GET['Well'])){
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>

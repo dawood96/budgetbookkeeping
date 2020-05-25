@@ -49,8 +49,8 @@ body {
     line-height: 1.5;
     /*color: #cecaca; */
     text-align: center;
-    background-color: rgb(243, 237, 237);
-}
+    background-color: rgb(243, 237, 237); 
+} 
 
 .box {
     width: 500px;
@@ -186,24 +186,16 @@ body {
     text-align: center;
 
 }
-/*for income,dashboard, and expenses design*/
-.bottomDiv {
-    position: absolute;
-    top:600px;
-    left: 150px;
-    width:1200px;
-    border: 1px outset black;
-}
 
 /*for expenses design*/
 .rightDiv aside > h4 {
-    margin: 0; 
+    margin: 0 !important; 
 }
 /*for expenses design*/
 .rightDiv aside
 { border: 1px outset black;
   background-color: white; float: right;
-  width: 300px; margin: 5px;
+  width: 300px; margin: 5px !important;
   padding: 20px; }
 
 /*Expenses and income design pages*/
@@ -225,12 +217,7 @@ body {
     left: 500px;
     position: absolute;
 }
-/*for income,dashboard, and expenses design*/
-.favspan {
-    left: 600px;
-    position: absolute;
-    top: 570px;
-}
+
 /*income design page*/
 .rightDiv2 {
     position: absolute;
@@ -241,45 +228,12 @@ body {
 }
 /*income design page*/
 .rightDiv2 aside > h4 {
-    margin: 0; 
+    margin: 0 !important; 
 }
 /*income design page*/
 .rightDiv2 aside
 { border: 1px outset black;
   background-color: white; float: right;
-  width: 300px; margin: 5px;
+  width: 300px; margin: 5px !important;
   padding: 40px; }
-
-/*dashboard design page*/
-.centerDiv2 {
-    position: absolute;
-    top:40px;
-    left: 150px;
-    width:1200px;
-
-}
-
-/*dashboard design page*/
-.centerDiv2 h4 b {
-    left: 500px; 
-    position: absolute;
-    top:250px;
-}
-
-/*dashboard design page*/
-.asidespan{
-    position:absolute;
-    left:90px;
-    top:300px;
-}
-
-/*dashboard design page*/
-.asidespan label{
-    margin: 0; 
-    border: 1px outset black;
-  background-color: white; float: right;
-  width: 300px; margin: 5px;
-  padding: 40px; 
-  text-align: center;
-}
 

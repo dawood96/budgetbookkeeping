@@ -1,6 +1,7 @@
 <?php 
 
 //start the session
+//This is a test
 session_start();
 
 //check if the session is active

@@ -6,6 +6,7 @@
     header('Location: index.php');
   }
 
+  include 'controllers/incomeController.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,9 +60,20 @@
     </div>
     <br>
         
+        <form method="post" data-ajax="false" action="IncomeDesign.php">
+            <label>Amount:</label>
+            <input type="text" name="incomeAmount" value="" required></br></br>
+            <label>Comment:</label>
+            <textarea cols="55" name="comment" value="" required></textarea></br></br>
+            <label>Date:</label>
+            <input type="date" name="date" value="" required></br></br>
+            <button type="submit" class="btn" name="add_income">Add Income</button></br></br>
+        </form>
+
+
           <!-- Content -->
        
-        <div>
+        <!-- <div>
             <h4><b>Add Income</b></h4>
             <br>
             <br>
@@ -72,7 +84,7 @@
         </div>
         <div class="rightDiv2">
             <aside> <h4></h4> $ </aside>
-        </div>
+        </div> -->
           <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

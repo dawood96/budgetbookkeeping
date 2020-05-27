@@ -6,6 +6,7 @@
     header('Location: index.php');
   }
 
+  include 'controllers/expensesController.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +62,20 @@
         
           <!-- Content -->
        <div>
-            <h4><b>Add Expenses</b></h4>
+            <h4><b>Add Expense</b></h4>
             <br>
             <br>
-            <label>Amount</label><input type="text" id="first" size="10" autofocus style=" right: 220px; width: 300px; margin: 5px; padding:10px; top:50px;"><br><br>
-            <label>Comment</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:110px;"><br><br>
-            <label>date</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:170px;"><br><br>
-            <label>Category</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:240px;"><br><br>
-            <label>Done</label><input type="text" id="first" size="15" autofocus style="right: 300px; width: 150px; margin: 5px;padding:10px;top:310px;"><br><br>
+            <form method="post" data-ajax="false" action="ExpensesDesign.php">
+            <label>Amount:</label>
+            <input type="text" name="expenseAmount" value="" required></br></br>
+            <label>Comment:</label>
+            <textarea cols="55" name="comment" value="" required></textarea></br></br>
+            <label>Date:</label>
+            <input type="date" name="date" value="" required></br></br>
+            <label>Category:</label>
+            <input type="text" name="category" value="" required></br></br>
+            <button type="submit" class="btn" name="add_expense">Add Expense</button></br></br>
+        </form>
         </div>
         <div class="rightDiv">
             <aside> <h4>Total expenses</h4> $ </aside>

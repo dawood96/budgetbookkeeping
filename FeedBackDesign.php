@@ -1,3 +1,18 @@
+<?php 
+  session_start(); 
+
+  if(isset($_SESSION['U_D'])) {
+    echo "</br>";
+    echo "</br>";
+    echo "</br>";
+    echo "Welcome, " . $_SESSION['FName'];
+  } 
+  else {
+      header('Location: index.php');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

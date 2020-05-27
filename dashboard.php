@@ -4,20 +4,31 @@
 //This is a test
 session_start();
 
-//check if the session is active
-if(isset($_GET['Well'])){
+// //check if the session is active
+// if(isset($_GET['Well'])){
 
-    if(isset($_SESSION['U_D'])){
-        // echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
-        // echo $_SESSION['FName'];
-    }
-    else {
-        header("location: login.php");
-        exit();
-    }
-} else {
-    header("location: login.php");
-    exit();
+//     if(isset($_SESSION['U_D'])){
+//         // echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
+//         // echo $_SESSION['FName'];
+//     }
+//     else {
+//         header("location: login.php");
+//         exit();
+//     }
+// } else {
+//     header("location: login.php");
+//     exit();
+// }
+
+// if (!isset($_SESSION['email'])) {
+//     $_SESSION['msg'] = "You must log in first";
+//     header('location: login.php');
+//   die();
+// }
+
+//checks if there is not a session open, if true, it reedirects to homepage
+if(!isset($_SESSION['U_D'])) {
+    header('Location: index.php');
 }
 
 include 'controllers/dashController.php';
@@ -55,15 +66,15 @@ include 'controllers/dashController.php';
                 </button>
 
             </div>
-            <a class="navbar-brand" href="index.html">LOGO</a>
+            <a class="navbar-brand">Welcome, <?php  echo $_SESSION['FName'];?></a>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a href="dashboard.php">DASHBOARD</a></li>
-                    <li class="nav-item"><a href="#">ADD CASH</a></li>
-                    <li class="nav-item"><a href="#">ADD EXPENSES</a></li>
+                    <li class="nav-item"><a href="IncomeDesign.php">ADD CASH</a></li>
+                    <li class="nav-item"><a href="ExpensesDesign.php">ADD EXPENSES</a></li>
                     <li class="nav-item"><a href="#">REPORTS</a></li>
                     <li class="nav-item"><a href="#">BRAINSTORMING</a></li>
-                    <li class="nav-item"><a href="login.php">SIGN OUT</a></li>
+                    <li class="nav-item"><a href="logout.php">SIGN OUT</a></li>
                 </ul>
             </div>
         </div>

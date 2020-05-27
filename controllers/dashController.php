@@ -8,14 +8,13 @@ This file will take care of pulling the information from
 the database and displaying it into the dashboard
 */
 
-session_start();
+//session_start();
 
 $user_email = $_SESSION["Email"];
 $user_id = $_SESSION["U_D"];
 
 //echo $user_email;
 //echo $user_id;
-
 //create a connection object
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -46,14 +45,14 @@ if ($result->num_rows != 0) {
 $balance = $income - $expenses;
 $balanceIC = number_format($balance, 2,'.', ',');
 
-$query = "SELECT * FROM csi3370_expenses_trans WHERE user_id = $user_id";
-$result = mysqli_query($conn, $query);
+//$query = "SELECT * FROM csi3370_expenses_trans WHERE user_id = $user_id";
+//$result = mysqli_query($conn, $query);
 
-if ($result->num_rows != 0) {
-    while ($rows = $result->fetch_assoc()) {
-        $expenses = $rows['SUM(expense)'];
-        $expenseIC = number_format($expenses, 2,'.', ',');
-    }
-}
+//if ($result->num_rows != 0) {
+//    while ($rows = $result->fetch_assoc()) {
+//        $expenses = $rows['SUM(expense)'];
+//        $expenseIC = number_format($expenses, 2,'.', ',');
+//    }
+//}
 
 ?>

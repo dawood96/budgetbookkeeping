@@ -1,3 +1,13 @@
+<?php 
+  session_start(); 
+
+  //checks if there is not a session open, if true, it reedirects to homepage
+  if(!isset($_SESSION['U_D'])) {
+    header('Location: index.php');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,15 +37,15 @@
                 </button>
 
             </div>
-            <a class="navbar-brand" href="index.html">LOGO</a>
+            <a class="navbar-brand">Add some Income</a>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a href="dashboard.php">DASHBOARD</a></li>
-                    <li class="nav-item"><a href="#">ADD CASH</a></li>
-                    <li class="nav-item"><a href="#">ADD EXPENSES</a></li>
+                    <li class="nav-item"><a href="IncomeDesign.php">ADD CASH</a></li>
+                    <li class="nav-item"><a href="ExpensesDesign.php">ADD EXPENSES</a></li>
                     <li class="nav-item"><a href="#">REPORTS</a></li>
                     <li class="nav-item"><a href="#">BRAINSTORMING</a></li>
-                    <li class="nav-item"><a href="login.php">SIGN OUT</a></li>
+                    <li class="nav-item"><a href="logout.php">SIGN OUT</a></li>
                 </ul>
             </div>
         </div>

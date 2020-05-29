@@ -38,7 +38,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a href="index.php">HOME</a></li>
                     <li class="nav-item"><a href="login.php">SIGN IN</a></li>
-                    <li class="nav-item"><a href="contact.html">SIGN UP</a></li>
+                    <li class="nav-item"><a href="signup.php">SIGN UP</a></li>
                 </ul>
             </div>
         </div>

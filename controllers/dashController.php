@@ -13,14 +13,9 @@ the database and displaying it into the dashboard
 $user_email = $_SESSION["Email"];
 $user_id = $_SESSION["U_D"];
 
-//echo $user_email;
-//echo $user_id;
-//create a connection object
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'budget');
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+//create a connection To the DB
+require_once 'config/db.php';
 
 $query = "SELECT SUM(income) FROM csi3370_income_trans WHERE user_id = $user_id";
 $result = mysqli_query($conn, $query);

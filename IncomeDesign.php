@@ -5,15 +5,15 @@
   if(!isset($_SESSION['U_D'])) {
     header('Location: index.php');
   }
-
+  include 'controllers/dashController.php';
   include 'controllers/incomeController.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Bookkeeping</title>
     <!-- Bootstrap CSS library -->
@@ -25,9 +25,9 @@
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style.css">
 
-    </head>
-    
-    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+</head>
+
+<body id="income_page" data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -51,49 +51,109 @@
             </div>
         </div>
     </nav>
-        
-         <div class="container text-center">
-        <img class="rounded mx-auto d-block img img-thumbnail" src="img/newyork.jpg" alt="">
-    </div>
-    <div class="container text-center text-dark">
+
+
+    <div class="container mt-md-5 text-center text-dark">
         <h1> <?php  echo $_SESSION['FName'];?> <?php echo $_SESSION['LName'];  ?></h1>
     </div>
+
     <br>
-        
-        <form method="post" data-ajax="false" action="IncomeDesign.php">
-            <label>Amount:</label>
-            <input type="text" name="incomeAmount" value="" required></br></br>
-            <label>Comment:</label>
-            <textarea cols="55" name="comment" value="" required></textarea></br></br>
-            <label>Date:</label>
-            <input type="date" name="date" value="" required></br></br>
-            <button type="submit" class="btn" name="add_income">Add Income</button></br></br>
-        </form>
 
-
-          <!-- Content -->
-       
-        <!-- <div>
-            <h4><b>Add Income</b></h4>
-            <br>
-            <br>
-            <label>Amount</label><input type="text" id="first" size="10" autofocus style=" right: 220px; width: 300px; margin: 5px; padding:10px; top:50px;"><br><br>
-            <label>Comment</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:110px;"><br><br>
-            <label>date</label><input type="text" id="first" size="15" autofocus style="right: 220px; width: 300px; margin: 5px;padding:10px;top:175px;"><br><br>
-            <label>Done</label><input type="text" id="first" size="15" autofocus style="right: 300px; width: 150px; margin: 5px;padding:10px;top:245px;"><br><br>
+    <div class="row">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <!-- We can have anything here -->
         </div>
-        <div class="rightDiv2">
-            <aside> <h4></h4> $ </aside>
-        </div> -->
-          <!-- DataTales Example -->
+        <div class="col-xl-4 col-md-12 mb-4">
+            <div class="card border-left-success border-left-success-balance shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold  text-uppercase mb-1">INCOME
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC; ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6 mb-4">
+            <!-- We can have anything here -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 form-div login">
+                <form method="POST" data-ajax="false" action="IncomeDesign.php">
+                    <h3 class="text-center text-uppercase">Add Income</h3><br>
+
+                    <!-- display empty fields -->
+                    <?php 
+                        if(isset($_GET['valid'])){
+                            $Message = $_GET['valid'];
+                            $Message = "Transaction is Successfully Recorded";
+
+                   ?>
+                    <div class="alert alert-success text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
+
+                   <!-- Invalid characters -->
+                   <?php 
+                        if(isset($_GET['invalid'])){
+                            $Message = $_GET['invalid'];
+                            $Message = "Invalid Character";
+
+                   ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
+
+
+
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input  name="incomeAmount" required placeholder="Enter Income Amount. Ex, 25.75"
+                            class=" text-center form-control form-control-lg">
+                    </div>
+                    <div class="form-group">
+                        <label>Comment</label>
+                        <textarea name="comment" cols="55" placeholder="Write a Note"
+                            class=" text-center form-control form-control-lg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" name="date" required placeholder="Enter Transaction Date"
+                            class="text-center form-control form-control-lg">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" name="add_income">ADD</button><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-dark">DataTables Example</h6>
         </div>
         <div class="container">
             <div class="table-responsive">
-                <table class="table table-bordered" >
-                    <thead >
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
                             <th width="25%">Transaction ID</th>
                             <th width="25%">amount</th>
@@ -103,7 +163,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-                        <th>Transaction ID</th>
+                            <th>Transaction ID</th>
                             <th>amount</th>
                             <th>date</th>
                             <th>comment</th>
@@ -121,19 +181,20 @@
             </div>
         </div>
     </div>
-        
-         <!-- Bootstrap JS library -->
-         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-        <div class="centerDiv">
-        </div>
 
-    </body>
+    <!-- Bootstrap JS library -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <div class="centerDiv">
+    </div>
+
+</body>
+
 </html>

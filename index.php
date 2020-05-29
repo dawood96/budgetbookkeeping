@@ -31,9 +31,6 @@
             <a class="navbar-brand" href="index.php">BUDGET BOOKKEEPING</a>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a href="index.php">HOME</a></li>
-                    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-                    <li class="nav-item"><a href="project.html">CONTACT</a></li>
                     <li class="nav-item"><a href="login.php">SIGN IN</a></li>
                     <li class="nav-item"><a href="signup.php">SIGN UP</a></li>
                 </ul>
@@ -55,7 +52,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/manage1.png" alt="New York">
+                <img src="img/manage1.png" width="100%" alt="New York">
                 <div class="carousel-caption">
                     <h3>Manage</h3>
                     <p>Keep up to date with your money, check your available balance</p>
@@ -63,21 +60,21 @@
             </div>
 
             <div class="item">
-                <img src="img/update1.png" width="2900" alt="Chicago">
+                <img src="img/update1.png" width="100%" alt="Chicago">
                 <div class="carousel-caption">
                     <h3>Update</h3>
                     <p>Add expenses or cash coming in, update your available balance</p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/record1.png" alt="Chicago">
+                <img src="img/record1.png" width="100%" alt="Chicago">
                 <div class="carousel-caption">
                     <h3>Record</h3>
                     <p>Keep a history of all of your money movements</p>
                 </div>
             </div>
             <div class="item">
-                <img src="img/save1.png" alt="Chicago">
+                <img src="img/save1.png" width="100%" alt="Chicago">
                 <div class="carousel-caption">
                     <h3>Save</h3>
                     <p>Plan ahead and save money with out brianstorming feature</p>
@@ -85,7 +82,7 @@
             </div>
 
             <div class="item">
-                <img src="img/free1.png" alt="Los Angeles">
+                <img src="img/free1.png" width="100%" alt="Los Angeles">
                 <div class="carousel-caption">
                     <h3>Enjoy!</h3>
                     <p>Let us help you organize your money for better investments</p>
@@ -125,6 +122,8 @@
         </div>
     </div>
     <br>
+
+
 
     <div class="container">
         <h1 class="text-center">Contact Us</h1>

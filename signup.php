@@ -21,6 +21,26 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <a class="navbar-brand" href="index.php">BUDGET BOOKKEEPING</a>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a href="login.php">SIGN IN</a></li>
+                    <li class="nav-item"><a href="signup.php">SIGN UP</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form-div">
@@ -38,7 +58,7 @@
                     <div class="alert alert-danger text-center">
                         <?php echo $Message ?>
                     </div>
-                   <?php  
+                    <?php  
                         }
                    ?>
 
@@ -52,12 +72,12 @@
                     <div class="alert alert-danger text-center">
                         <?php echo $Message ?>
                     </div>
-                   <?php  
+                    <?php  
                         }
                    ?>
 
-                     <!-- Invalid Email  -->
-                     <?php 
+                    <!-- Invalid Email  -->
+                    <?php 
                         if(isset($_GET['Email'])){
                             $Message = $_GET['Invalid'];
                             $Message = "Invalid Email";
@@ -66,12 +86,12 @@
                     <div class="alert alert-danger text-center">
                         <?php echo $Message ?>
                     </div>
-                   <?php  
+                    <?php  
                         }
                    ?>
 
-                        <!-- Invalid UserEmail  -->
-                     <?php 
+                    <!-- Invalid UserEmail  -->
+                    <?php 
                         if(isset($_GET['UserEmail'])){
                             $Message = $_GET['UserEmail'];
                             $Message = "Email is Already Taken";
@@ -80,12 +100,12 @@
                     <div class="alert alert-danger text-center">
                         <?php echo $Message ?>
                     </div>
-                   <?php  
+                    <?php  
                         }
                    ?>
 
-                     <!-- success Message -->
-                     <?php 
+                    <!-- success Message -->
+                    <?php 
                         if(isset($_GET['success'])){
                             $Message = $_GET['success'];
                             $Message = "You have Successfully Signed Up";
@@ -94,7 +114,7 @@
                     <div class="alert alert-success text-center">
                         <?php echo $Message ?>
                     </div>
-                   <?php  
+                    <?php  
                         }
                    ?>
 
@@ -113,7 +133,7 @@
                         <input type="text" name="email" value="" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label> 
+                        <label for="password">Password</label>
                         <input type="password" name="password" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">

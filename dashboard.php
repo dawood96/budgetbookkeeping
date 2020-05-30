@@ -97,8 +97,7 @@ include 'controllers/dashController.php';
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance
-                            </div>
+                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
                         </div>
                         <div class="col-auto">
@@ -109,46 +108,46 @@ include 'controllers/dashController.php';
             </div>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income
+            <a href="IncomeDesign.php">
+                <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC; ?> </div>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC; ?>
+                            <div class="col-auto">
+                                <i class="far fa-calendar fa-2x text-gray-300"></i>
                             </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="far fa-calendar fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
+
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES
+            <a href="ExpensesDesign.php">
+                <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC; ?></div> </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC; ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Number of transactions
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">96</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Number of transactions</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $total_number_of_transaction; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -166,8 +165,8 @@ include 'controllers/dashController.php';
         </div>
         <div class="container">
             <div class="table-responsive">
-                <table class="table table-bordered" >
-                    <thead >
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
                             <th width="25%">Transaction ID</th>
                             <th width="25%">amount</th>
@@ -177,7 +176,7 @@ include 'controllers/dashController.php';
                     </thead>
                     <tfoot>
                         <tr>
-                        <th>Transaction ID</th>
+                            <th>Transaction ID</th>
                             <th>amount</th>
                             <th>date</th>
                             <th>comment</th>

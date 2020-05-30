@@ -17,7 +17,7 @@
 
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="index_page" data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -160,10 +160,12 @@
             style="border:0; height: 100%; width:100%" allowfullscreen></iframe>
     </div>
 
+    <br?
 
 
 
 
+    <?php include 'footer.php';?>
 
 
 

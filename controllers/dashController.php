@@ -125,13 +125,13 @@ $balanceIC = number_format($balance, 2,'.', '');
         }
     }
 
-    $tech_expense = ($tech_expense)/$expenses * 100;
-    $bills_expense = ($bills_expense)/$expenses * 100;
-    $other_expense = ($other_expense)/$expenses * 100;
-    $tech_expense = ($tech_expense)/$expenses * 100;
-    $food_expense = ($food_expense)/$expenses * 100;
-    $shopping_expense = ($shopping_expense)/$expenses * 100;
-    $gifts_expense = ($gifts_expense)/$expenses * 100;
+    $tech_expense = ($tech_expense)/ ($expenses > 0 ? $expenses : 1) * 100;
+    $bills_expense = ($bills_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $other_expense = ($other_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $tech_expense = ($tech_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $food_expense = ($food_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $shopping_expense = ($shopping_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $gifts_expense = ($gifts_expense)/($expenses > 0 ? $expenses : 1) * 100;
 
 
 

@@ -235,8 +235,8 @@ include 'controllers/dashController.php';
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'amount'],
-          ['Expense',<?php  echo $expenseIC; ?>],
-          ['Income', <?php  echo $incomeIC; ?>],
+          ['Expense',<?php  echo ($expenseIC > 0 ? $expenseIC : 1); ?>],
+          ['Income', <?php  echo ( $incomeIC > 0 ? $incomeIC : 1); ?>],
         ]);
 
         var options = {

@@ -7,6 +7,8 @@
   }
   include 'controllers/dashController.php';
   include 'controllers/incomeController.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -104,8 +106,8 @@
                         }
                    ?>
 
-                   <!-- Invalid characters -->
-                   <?php 
+                    <!-- Invalid characters -->
+                    <?php 
                         if(isset($_GET['invalid'])){
                             $Message = $_GET['invalid'];
                             $Message = "Invalid Character";
@@ -118,26 +120,49 @@
                         }
                    ?>
 
+                    <!-- valid delete -->
+                    <?php 
+                        if(isset($_GET['deleted'])){
+                            $Message = $_GET['deleted'];
+                            $Message = "The Record Was Deleted";
+
+                   ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
 
 
 
+                    <input type="hidden" name="id" value="<?php echo $id_trans; ?>">
                     <div class="form-group">
                         <label>Amount</label>
-                        <input  name="incomeAmount" required placeholder="Enter Income Amount. Ex, 25.75"
-                            class=" text-center form-control form-control-lg">
+                        <input name="incomeAmount" required placeholder="Enter Income Amount. Ex, 25.75"
+                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
-                        <textarea name="comment" cols="55" placeholder="Write a Note"
+                        <textarea name="comment" value="<?php echo $com; ?>" placeholder="Write a Note"
                             class=" text-center form-control form-control-lg"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="date" name="date" required placeholder="Enter Transaction Date"
-                            class="text-center form-control form-control-lg">
+                        <input type="date" name="date" value="<?php echo $date; ?>" required
+                            placeholder="Enter Transaction Date" class="text-center form-control form-control-lg">
                     </div>
                     <div class="form-group">
+
+                        <?php 
+                            if ($update == true):
+                        ?>
+                        <button type="submit" class="btn btn-success" name="update">Update</button><br><br>
+                        <?php 
+                            else:
+                        ?>
                         <button type="submit" class="btn btn-success" name="add_income">ADD</button><br><br>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>
@@ -145,42 +170,62 @@
     </div>
     <br>
 
+    <?php  
+        $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id ORDER BY timestamp DESC";
+        $result = mysqli_query($conn, $result);
+        // pre_r($result->fetch_assoc());
+    ?>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">DataTables Example</h6>
-        </div>
-        <div class="container">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th width="25%">Transaction ID</th>
-                            <th width="25%">amount</th>
-                            <th width="25%">date</th>
-                            <th width="25%">comment</th>
+                <table class="table">
+                    <thead class="thead-light table-bordered">
+                        <tr class="text-center">
+                            <th class="text-center">Transaction ID</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>amount</th>
-                            <th>date</th>
-                            <th>comment</th>
+                    <tfoot class="thead-light table-bordered">
+                        <tr class="text-center">
+                            <th class="text-center">Transaction ID</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+                    <?php while ($row = $result->fetch_assoc() ): ?>
+                    <tr>
+                        <td><?php echo $row['income_trans_id']; ?></td>
+                        <td><?php echo $row['income']; ?></td>
+                        <td><?php echo $row['timestamp']; ?></td>
+                        <td><?php echo $row['comment']; ?></td>
+                        <td>
+                            <a href="IncomeDesign.php?edit= <?php echo $row['income_trans_id']; ?>"
+                                class="btn btn-info">Edit</a>
+                            <a href="IncomeDesign.php?delete= <?php echo $row['income_trans_id']; ?>"
+                                class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
                 </table>
             </div>
         </div>
+
+        <?php 
+        function pre_r ($array){
+            echo '<pre>';
+            print_r($array);
+            echo '</pre>';
+        }
+    ?>
     </div>
+
+
 
     <!-- Bootstrap JS library -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -192,8 +237,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <div class="centerDiv">
-    </div>
 
 </body>
 

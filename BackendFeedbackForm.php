@@ -1,18 +1,16 @@
 <?php
 
-if (isset($_POST['Submit'])) {
-  $name = $_POST['name'];
-  $Subject = $_POST['Subject'];
-  $mailFrom = $_POST['e-mail'];
-  $message = $_POST['message'];
+if (isset($_REQUEST['Submit'])) {
+  $Name = $_REQUEST['Name'];
+  $Subject = $_REQUEST['Subject'];
+  $MailFrom = $_REQUEST['Email'];
+  $Message = $_REQUEST['Message'];
 
+  $messages = "Name: $Name\n Subject: $Subject\n MailFrom: $MailFrom\n Message: $Message" ;
 
-  $mailTo = "tyler_kavanagh@yahoo.com";
-  $headers = "From: ".$mailFrom;
-  $txt = "You have recieved an e-mail from Budgetbooking Customer Feedback form ".$name.". \n\n" .$message;
+  mail("tkavanagh28@gmail.com", "You have recieved a message", "Information Requested:\n\n$messages", "From: $MailFrom" );
 
-  mail($mailTo, $Subject, $txt, $headers);
-  header("location: index.php?mailsend");
+  header("Location: index.php?mailsend");
 }
 
 ?>

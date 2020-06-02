@@ -93,7 +93,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Bills/payments
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $bills_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -109,7 +109,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Food/Drinks
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $food_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -125,7 +125,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Shopping
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $shopping_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -141,7 +141,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Gifts
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $gifts_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -157,7 +157,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Technology
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $tech_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -173,7 +173,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Other
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $other_expense; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -240,9 +240,9 @@
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        <select type="text" name="category" class="text-center form-control form-control-lg">
-                            <option value="BILLS/PAYMENTS" name="bills">BILLS/PAYMENTS</option>
-                            <option value="FOOD/DRINKS" name="food">FOOD/DRINKS</option>
+                        <select required type="text" name="category" class="text-center form-control form-control-lg">
+                            <option value="BILLS" name="bills">BILLS/PAYMENTS</option>
+                            <option value="FOOD" name="food">FOOD/DRINKS</option>
                             <option value="SHOPPING" name="shopping">SHOPPING</option>
                             <option value="GIFTS" name="gift">GIFTS</option>
                             <option value="TECHNOLOGY" name="technology">TECHNOLOGY</option>

@@ -22,7 +22,7 @@ if (isset($_POST['add_expense'])) {
         header ("location: ExpensesDesign.php?invalid");
         exit();
     } else {
-        $query = "INSERT INTO csi3370_expenses_trans (user_id, expense, type_of_expense, comment, timestamp) VALUES ('$user_id','$expense', '$category', '$comment', '$date')";
+        $query = "INSERT INTO csi3370_expenses_trans (user_id, expense, type_of_expense, comment, timestamp) VALUES ('$user_id','$expense', '$type', '$comment', '$date')";
         mysqli_query($conn, $query);
         header('location: ExpensesDesign.php?valid');
     }

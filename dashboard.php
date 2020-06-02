@@ -257,12 +257,12 @@ include 'controllers/dashController.php';
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
           ['Move', 'Percentage'],
-          ["BILLS/PAYMENTS", <?php  echo $bills_expense; ?>],
-          ["FOOD/DRINKS", <?php  echo $food_expense; ?>],
-          ["SHOPPING", <?php  echo $shopping_expense; ?>],
-          ["GIFTS", <?php  echo $gifts_expense; ?>],
-          ["TECHNOLOGY", <?php  echo $tech_expense; ?>],
-          ['Other', <?php  echo $other_expense; ?>]
+          ["BILLS/PAYMENTS", <?php  echo $bills_expense_percentage; ?>],
+          ["FOOD/DRINKS", <?php  echo $food_expense_percentage; ?>],
+          ["SHOPPING", <?php  echo $shopping_expense_percentage; ?>],
+          ["GIFTS", <?php  echo $gifts_expense_percentage; ?>],
+          ["TECHNOLOGY", <?php  echo $tech_expense_percentage; ?>],
+          ['Other', <?php  echo $other_expense_percentage; ?>]
         ]);
 
         var options = {

@@ -93,7 +93,7 @@ include 'controllers/dashController.php';
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2">
+            <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2 ">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -101,12 +101,13 @@ include 'controllers/dashController.php';
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class="fa fa-money" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="col-xl-3 col-md-6 mb-4">
             <a href="IncomeDesign.php">
                 <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
@@ -170,47 +171,157 @@ include 'controllers/dashController.php';
         <div id="top_x_div" style="width: 50%px; height: 400px;"></div>
         </div>
     </div>
-    <br>
+    <hr style="width: 70%;">
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">DataTables Example</h6>
+
+    <?php  
+        $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+        $result = mysqli_query($conn, $result);
+    ?>
+
+    <div class="container">
+        <div>
+            <h3>Last 30-day Summary</h3>
+            <h4>
+                Hello<span class="text-primary text-uppercase"> <?php  echo $_SESSION['FName'];?></span>, this is your summary of the past 30 days. <br>
+                You have reported <span class="text-success"><?php  echo $last_month_income_trans; ?></span> income transactions and the total money of these transactions 
+                is <span class="text-success">$<?php  echo $last_month_income; ?></span>.
+                You have also reported <span class="text-danger"><?php  echo $last_month_expense_trans; ?></span> expense transactions. 
+                The total of your expenses for the past 30 days is <span class="text-danger">$<?php  echo $last_month_expense; ?></span>.
+            </h4>
         </div>
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th width="25%">Transaction ID</th>
-                            <th width="25%">amount</th>
-                            <th width="25%">date</th>
-                            <th width="25%">comment</th>
+        <hr>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="IncomeDesign.php">
+                    <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income This Month</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_income; ?> </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="IncomeDesign.php">
+                    <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1"># of transactions</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_income_trans; ?> </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="ExpensesDesign.php">
+                    <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES this month</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_expense; ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="ExpensesDesign.php">
+                    <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1"># of transactions </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_expense_trans; ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <hr style="width: 70%;">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-dark table-bordered">
+                            <tr class="text-center table-success">
+                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </thead>
+                        <tfoot class="thead-light table-bordered">
+                            <tr class="text-center">
+                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </tfoot>
+                        <?php while ($row = $result->fetch_assoc() ): ?>
+                        <tr class="table-success">
+                            <td><?php echo $row['income_trans_id']; ?></td>
+                            <td class="font-weight-bold"><?php echo $row['income']; ?></td>
+                            <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                         </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>amount</th>
-                            <th>date</th>
-                            <th>comment</th>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-dark table-bordered">
+                            <tr class="text-center table-danger">
+                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </thead>
+                        <tfoot class="thead-light table-bordered">
+                            <tr class="text-center">
+                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </tfoot>
+                        <?php while ($row = $result->fetch_assoc() ): ?>
+                        <tr class="table-danger">
+                            <td><?php echo $row['income_trans_id']; ?></td>
+                            <td class="font-weight-bold"><?php echo $row['income']; ?></td>
+                            <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                         </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-
-
-
 
 
 

@@ -135,4 +135,27 @@ $balanceIC = number_format($balance, 2,'.', '');
 
 
 
+    //This code for the last month of income and expense transactions
+    $income_summary = "SELECT SUM(income), COUNT(income)  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+    $income_summary = mysqli_query($conn, $income_summary);
+    if ($income_summary->num_rows != 0) {
+        while ($rows = $income_summary->fetch_assoc()) {
+            $last_month_income = number_format($rows['SUM(income)'], 2,'.', ',');
+            $last_month_income_trans = $rows['COUNT(income)'];
+        }
+    }
+
+    $expense_summary = "SELECT SUM(expense), COUNT(expense)  FROM csi3370_expenses_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+    $expense_summary = mysqli_query($conn, $expense_summary);
+    if ($expense_summary->num_rows != 0) {
+        while ($rows = $expense_summary->fetch_assoc()) {
+            $last_month_expense = number_format($rows['SUM(expense)'], 2,'.', ',');
+            $last_month_expense_trans = $rows['COUNT(expense)'];
+        }
+    }
+
+
+
+
+
 ?>

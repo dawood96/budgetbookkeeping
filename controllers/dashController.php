@@ -2,6 +2,7 @@
 
 /*
 @author Maurice Fuentes
+@author David Shammas
 @version 5/22/2020
 
 This file will take care of pulling the information from
@@ -41,7 +42,6 @@ if ($result->num_rows != 0) {
 
 $balance = $income - $expenses;
 $balanceIC = number_format($balance, 2,'.', '');
-
 
 
     
@@ -134,7 +134,6 @@ $balanceIC = number_format($balance, 2,'.', '');
     $gifts_expense_percentage = ($gifts_expense)/($expenses > 0 ? $expenses : 1) * 100;
 
 
-
     //This code for the last month of income and expense transactions
     $income_summary = "SELECT SUM(income), COUNT(income)  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
     $income_summary = mysqli_query($conn, $income_summary);
@@ -153,9 +152,6 @@ $balanceIC = number_format($balance, 2,'.', '');
             $last_month_expense_trans = $rows['COUNT(expense)'];
         }
     }
-
-
-
 
 
 ?>

@@ -4,28 +4,6 @@
 //This is a test
 session_start();
 
-// //check if the session is active
-// if(isset($_GET['Well'])){
-
-//     if(isset($_SESSION['U_D'])){
-//         // echo '<div class="display-4 mt-5  text-center"> you Have Successfully Logged In. </div>';
-//         // echo $_SESSION['FName'];
-//     }
-//     else {
-//         header("location: login.php");
-//         exit();
-//     }
-// } else {
-//     header("location: login.php");
-//     exit();
-// }
-
-// if (!isset($_SESSION['email'])) {
-//     $_SESSION['msg'] = "You must log in first";
-//     header('location: login.php');
-//   die();
-// }
-
 //checks if there is not a session open, if true, it reedirects to homepage
 if(!isset($_SESSION['U_D'])) {
     header('Location: index.php');
@@ -80,9 +58,6 @@ include 'controllers/dashController.php';
         </div>
     </nav>
 
-    <!-- <div class="container text-center">
-        <img class="rounded mx-auto d-block img img-thumbnail" src="img/newyork.jpg" alt="">
-    </div> -->
     <div class="container text-center text-dark">
         <h1> <?php  echo $_SESSION['FName'];?>'s Dashboard </h1>
     </div>

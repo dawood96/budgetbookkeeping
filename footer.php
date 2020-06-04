@@ -1,6 +1,8 @@
-    <!-- @author David Shammas
+    <!-- 
+    @author David Shammas
     @version 5/29/2020
-    Footer of the index (public) page. -->
+    Footer of the index 'public' page.
+     -->
 
 
     <!-- Footer -->

@@ -47,14 +47,15 @@ include 'controllers/dashController.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- Font-awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style.css">  
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+
 </head>
 
-<body id="myPage" data-spy="scroll"  data-offset="60">
+<body id="myPage">
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -92,7 +93,7 @@ include 'controllers/dashController.php';
     <div class="row">
 
         <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
             <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2 ">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -108,7 +109,7 @@ include 'controllers/dashController.php';
             </div>
         </div>
         
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
             <a href="IncomeDesign.php">
                 <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
                     <div class="card-body">
@@ -126,7 +127,7 @@ include 'controllers/dashController.php';
             </a>
         </div>
 
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
             <a href="ExpensesDesign.php">
                 <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
                     <div class="card-body">
@@ -143,7 +144,7 @@ include 'controllers/dashController.php';
                 </div>
             </a>
         </div>
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
             <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -163,12 +164,12 @@ include 'controllers/dashController.php';
     <br>
 
     <div class="row">
-        <div class="col-sm-6 col-md-6 mb-4">
-        <div id="donutchart" style="width: 50%px; height: 400px; "></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
+        <div id="donutchart" style="width: 45%px; height: 400px; "></div>
         </div>
 
-        <div class="col-sm-6 col-md-6 mb-4">
-        <div id="top_x_div" style="width: 50%px; height: 400px;"></div>
+        <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
+        <div id="top_x_div" style="width: 45%px; height: 400px;"></div>
         </div>
     </div>
     <hr style="width: 70%;">
@@ -182,13 +183,14 @@ include 'controllers/dashController.php';
     <div class="container">
         <div>
             <h3>Last 30-day Summary</h3>
+            <h5>(From <?php  echo date('Y/m/d', strtotime('-30 days')); ?> To <?php  echo date("Y/m/d"); ?>)</h5>
             <h4>
                 Hello<span class="text-primary text-uppercase"> <?php  echo $_SESSION['FName'];?></span>, this is your summary of the past 30 days. <br>
                 You have reported <span class="text-success"><?php  echo $last_month_income_trans; ?></span> income transactions and the total money of these transactions 
                 is <span class="text-success">$<?php  echo $last_month_income; ?></span>.
                 You have also reported <span class="text-danger"><?php  echo $last_month_expense_trans; ?></span> expense transactions. 
                 The total of your expenses for the past 30 days is <span class="text-danger">$<?php  echo $last_month_expense; ?></span>.
-            </h4>
+            </h5>
         </div>
         <hr>
         <div class="row">
@@ -338,8 +340,7 @@ include 'controllers/dashController.php';
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="js/chart.js"></script>
+
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);

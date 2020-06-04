@@ -38,7 +38,7 @@ else {
 			<label for="phone">Phone</label><br>
 			<input type="tel" name="phone" class="inp" placeholder="Enter Your Phone" required><br>
 			<label for="message">Message</label><br>
-			<textarea name="msg" class="msg-box" placeholder="Enter Your Message Here..." required></textarea><br>
+			<textarea name="msg" class="msg-box" placeholder="Enter Your Message Here" required></textarea><br>
 			<input type="submit" name="submit" value="Send" class="sub-btn">
 		</form>
 	</div>

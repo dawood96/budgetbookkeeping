@@ -15,31 +15,34 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Budget Bookkeeping</title>
-     <!-- Bootstrap CSS library -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-     <!-- Font-awesome -->
-     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-     <!-- custom CSS file -->
-     <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	     <title>Budget Bookkeeping</title>
+	     <!-- Bootstrap CSS library -->
+	     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	     <!-- Font-awesome -->
+	     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	     <!-- custom CSS file -->
+	     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<main>
-<p> Budgetbooking Contact form </p>
-<form class="Feedback" action="Contactform.php" method="post">
-<input type="text" name="Name" placeholder="Full name">
-<input type="text" name="Email" placeholder="email">
-<input type="text" name="Subject" placeholder="Subject">
-<textarea name="message" placeholder="Message"></textarea>
-<button type="submit" name="submit"> SEND MAIL </button>
-</form>
-</main>
-
-<!-- Bootstrap JS library -->
+	<div class="main">
+		<div class="info">Give Your Feedback!</div>
+		<form action="Contact_form.php" method="post" name="form" class="form-box">
+			<label for="name">Name</label><br>
+			<input type="text" name="name" class="inp" placeholder="Enter Your Name" required><br>
+			<label for="email">Email ID</label><br>
+			<input type="email" name="email" class="inp" placeholder="Enter Your Email" required><br>
+			<label for="phone">Phone</label><br>
+			<input type="tel" name="phone" class="inp" placeholder="Enter Your Phone" required><br>
+			<label for="message">Message</label><br>
+			<textarea name="msg" class="msg-box" placeholder="Enter Your Message Here..." required></textarea><br>
+			<input type="submit" name="submit" value="Send" class="sub-btn">
+		</form>
+	</div>
+	<!-- Bootstrap JS library -->
  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
  </script>

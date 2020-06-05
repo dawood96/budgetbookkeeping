@@ -152,6 +152,9 @@ include 'controllers/dashController.php';
     <?php  
         $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
         $result = mysqli_query($conn, $result);
+
+        $result_expense = "SELECT expense_trans_id, expense, timestamp, comment  FROM csi3370_expenses_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+        $result_expense = mysqli_query($conn, $result_expense);
     ?>
 
     <div class="container">
@@ -174,7 +177,7 @@ include 'controllers/dashController.php';
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income This Month</div>
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">Last 30-days Income</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_income; ?> </div>
                                 </div>
                                 <div class="col-auto">
@@ -208,7 +211,7 @@ include 'controllers/dashController.php';
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES this month</div>
+                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Last 30-days Expenses</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_expense; ?></div>
                                 </div>
                                 <div class="col-auto">
@@ -286,10 +289,10 @@ include 'controllers/dashController.php';
                                 <th class="text-center">Date</th>
                             </tr>
                         </tfoot>
-                        <?php while ($row = $result->fetch_assoc() ): ?>
+                        <?php while ($row = $result_expense->fetch_assoc() ): ?>
                         <tr class="table-danger">
-                            <td><?php echo $row['income_trans_id']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['income']; ?></td>
+                            <td><?php echo $row['expense_trans_id']; ?></td>
+                            <td class="font-weight-bold"><?php echo $row['expense']; ?></td>
                             <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                         </tr>
                         <?php endwhile; ?>

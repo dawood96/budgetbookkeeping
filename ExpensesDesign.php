@@ -86,7 +86,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -134,7 +134,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+    </div>
+    <div class="row">   
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -150,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -166,7 +168,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-3 col-sm-6 mb-4">
+        <div class="col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4">
             <div class="card border-left-success border-left-danger-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">

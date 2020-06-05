@@ -131,7 +131,6 @@ $balanceIC1 = number_format($balance, 2,'.', ',');
     $tech_expense_percentage = ($tech)/ ($expenses > 0 ? $expenses : 1) * 100;
     $bills_expense_percentage = ($bills)/($expenses > 0 ? $expenses : 1) * 100;
     $other_expense_percentage = ($other)/($expenses > 0 ? $expenses : 1) * 100;
-    //$tech_expense_percentage = ($tech_expense)/ ($expenses > 0 ? $expenses : 1) * 100;
     $food_expense_percentage = ($food)/($expenses > 0 ? $expenses : 1) * 100;
     $shopping_expense_percentage = ($shopping)/($expenses > 0 ? $expenses : 1) * 100;
     $gifts_expense_percentage = ($gifts)/($expenses > 0 ? $expenses : 1) * 100;

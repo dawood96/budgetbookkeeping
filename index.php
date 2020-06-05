@@ -1,3 +1,7 @@
+<?php
+    include 'controllers/indexController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,6 +118,7 @@
         </div>
     </div>
     <br>
+    <hr style="width: 70%;">
 
     <div class="container">
         <div class="text-center">
@@ -122,6 +127,7 @@
         </div>
     </div>
     <br>
+    <hr style="width: 70%;">
 
 
 
@@ -154,6 +160,24 @@
         </div>
     </div>
     <br>
+    <hr style="width: 70%;">
+    <div class="container">
+        <div class="text-center">
+            <h2>What are you WAITING for?!</h2>
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h3 class="mb-1">Join our community and be part of <?php echo $total_number_of_users ?> active users.</h3>
+                </li>
+                <li class="list-inline-item">
+                    <a href="signup.php" class="btn btn-outline-white btn-rounded">Sign up!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <hr style="width: 70%;">
+
+
     <!--Google map-->
     <div id="map-container-google-2" class="z-depth-1-half map-container" style="height:500px">
         <iframe src="https://maps.google.com/maps?q=detroid&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"

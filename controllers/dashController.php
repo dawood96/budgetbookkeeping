@@ -25,6 +25,7 @@ if ($result->num_rows != 0) {
     while ($rows = $result->fetch_assoc()) {
         $income = $rows['SUM(income)'];
         $incomeIC = number_format($income, 2,'.', '');
+        $incomeIC1 = number_format($income, 2,'.', ',');
     }
 }
 
@@ -36,12 +37,14 @@ if ($result->num_rows != 0) {
     while ($rows = $result->fetch_assoc()) {
         $expenses = $rows['SUM(expense)'];
         $expenseIC = number_format($expenses, 2,'.', '');
+        $expenseIC1 = number_format($expenses, 2,'.', ',');
     }
 }
 
 
 $balance = $income - $expenses;
 $balanceIC = number_format($balance, 2,'.', '');
+$balanceIC1 = number_format($balance, 2,'.', ',');
 
 
     
@@ -125,13 +128,13 @@ $balanceIC = number_format($balance, 2,'.', '');
         }
     }
 
-    $tech_expense_percentage = ($tech_expense)/ ($expenses > 0 ? $expenses : 1) * 100;
-    $bills_expense_percentage = ($bills_expense)/($expenses > 0 ? $expenses : 1) * 100;
-    $other_expense_percentage = ($other_expense)/($expenses > 0 ? $expenses : 1) * 100;
-    $tech_expense_percentage = ($tech_expense)/($expenses > 0 ? $expenses : 1) * 100;
-    $food_expense_percentage = ($food_expense)/($expenses > 0 ? $expenses : 1) * 100;
-    $shopping_expense_percentage = ($shopping_expense)/($expenses > 0 ? $expenses : 1) * 100;
-    $gifts_expense_percentage = ($gifts_expense)/($expenses > 0 ? $expenses : 1) * 100;
+    $tech_expense_percentage = ($tech)/ ($expenses > 0 ? $expenses : 1) * 100;
+    $bills_expense_percentage = ($bills)/($expenses > 0 ? $expenses : 1) * 100;
+    $other_expense_percentage = ($other)/($expenses > 0 ? $expenses : 1) * 100;
+    //$tech_expense_percentage = ($tech_expense)/ ($expenses > 0 ? $expenses : 1) * 100;
+    $food_expense_percentage = ($food)/($expenses > 0 ? $expenses : 1) * 100;
+    $shopping_expense_percentage = ($shopping)/($expenses > 0 ? $expenses : 1) * 100;
+    $gifts_expense_percentage = ($gifts)/($expenses > 0 ? $expenses : 1) * 100;
 
 
     //This code for the last month of income and expense transactions

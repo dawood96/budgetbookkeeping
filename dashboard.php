@@ -74,7 +74,7 @@ include 'controllers/dashController.php';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC1; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fa fa-money" aria-hidden="true"></i>
@@ -91,7 +91,7 @@ include 'controllers/dashController.php';
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC; ?> </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC1; ?> </div>
                             </div>
                             <div class="col-auto">
                                 <i class="far fa-calendar fa-2x text-gray-300"></i>
@@ -109,7 +109,7 @@ include 'controllers/dashController.php';
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC; ?></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC1; ?></div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>

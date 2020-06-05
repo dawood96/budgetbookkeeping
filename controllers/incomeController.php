@@ -13,6 +13,7 @@ $trans_id = '';
 $amount = '';
 $date = '';
 $comment = '';
+$com = '';
 $id_trans = 0;
 
 //go to this file to connect to the database
@@ -55,7 +56,7 @@ if(isset($_GET['edit'])){
     $amount = $row['income'];
     $date = $row['timestamp'];
     $com = $row['comment'];
-    
+    $id_trans = $id;
 }
 
 
@@ -63,13 +64,14 @@ if(isset($_GET['edit'])){
 if (isset($_POST['update'])){
     $id_trans = $_POST['id'];
 
+    $id_trsn = mysqli_real_escape_string($conn, $_POST['id']);
     $income = mysqli_real_escape_string($conn, $_POST['incomeAmount']);
     $comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
 
-    $query = "UPDATE csi3370_income_trans SET income=$income, timestamp=$date, comment=$comment where user_id = $user_id AND income_trans_id = $id_trans";
-    mysqli_query($conn, $query);
+    $query1 = "UPDATE csi3370_income_trans SET income='$income', timestamp='$date', comment='$comment' where user_id = '$user_id' AND income_trans_id = '$id_trans'";
+    mysqli_query($conn, $query1);
+    header('location: IncomeDesign.php?updated');
 }
-
 
 ?>

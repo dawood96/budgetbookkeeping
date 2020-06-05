@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="login_page" data-spy="scroll" data-target=".navbar" data-offset="60" >
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,73 +44,73 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 offset-md-4 form-div login">
-                <form action="login.php" method="POST">
-                    <h3 class="text-center">Login</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4 form-div login">
+                    <form action="login.php" method="POST">
+                        <h3 class="text-center">Login</h3>
 
-                    <!-- display empty fields -->
+                        <!-- display empty fields -->
+                        <?php 
+                            if(isset($_GET['empty'])){
+                                $Message = $_GET['empty'];
+                                $Message = "Please Fill in the Blanks";
+
+                    ?>
+                        <div class="alert alert-danger text-center">
+                            <?php echo $Message ?>
+                        </div>
+                    <?php  
+                            }
+                    ?>
+
+                    <!-- Invalid user -->
                     <?php 
-                        if(isset($_GET['empty'])){
-                            $Message = $_GET['empty'];
-                            $Message = "Please Fill in the Blanks";
+                            if(isset($_GET['U_Invalid'])){
+                                $Message = $_GET['U_Invalid'];
+                                $Message = "Invalid User";
 
-                   ?>
-                    <div class="alert alert-danger text-center">
-                        <?php echo $Message ?>
-                    </div>
-                   <?php  
-                        }
-                   ?>
+                    ?>
+                        <div class="alert alert-danger text-center">
+                            <?php echo $Message ?>
+                        </div>
+                    <?php  
+                            }
+                    ?>
 
-                   <!-- Invalid user -->
-                   <?php 
-                        if(isset($_GET['U_Invalid'])){
-                            $Message = $_GET['U_Invalid'];
-                            $Message = "Invalid User";
+                    <!-- Invalid Password -->
+                    <?php 
+                            if(isset($_GET['P_Invalid'])){
+                                $Message = $_GET['P_Invalid'];
+                                $Message = "Invalid Password";
 
-                   ?>
-                    <div class="alert alert-danger text-center">
-                        <?php echo $Message ?>
-                    </div>
-                   <?php  
-                        }
-                   ?>
-
-                   <!-- Invalid Password -->
-                   <?php 
-                        if(isset($_GET['P_Invalid'])){
-                            $Message = $_GET['P_Invalid'];
-                            $Message = "Invalid Password";
-
-                   ?>
-                    <div class="alert alert-danger text-center">
-                        <?php echo $Message ?>
-                    </div>
-                   <?php  
-                        }
-                   ?>
+                    ?>
+                        <div class="alert alert-danger text-center">
+                            <?php echo $Message ?>
+                        </div>
+                    <?php  
+                            }
+                    ?>
 
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control form-control-lg">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control form-control-lg">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Log In</button>
-                    </div>
-                    <p class="text-center">
-                        Not yet register? <a href=login.php>Sign Up</a>
-                    </p>
-                </form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" required placeholder="Enter Your Email Address" class="form-control form-control-lg">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" required placeholder="Enter Your Password" class="form-control form-control-lg">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Log In</button>
+                        </div>
+                        <p class="text-center">
+                            Not yet register? <a href=login.php>Sign Up</a>
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
     
 

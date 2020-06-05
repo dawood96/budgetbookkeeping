@@ -20,7 +20,7 @@
     <title>Sign up</title>
 </head>
 
-<body>
+<body id="signup_page">
     <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">

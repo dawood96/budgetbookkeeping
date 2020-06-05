@@ -6,12 +6,14 @@ Sign Up and Log In page CSS
 */
 .form-div {
     margin: 50px auto 50px;
-    padding: 25px 15px 10px 15px;
+    padding: 25px 15px 30px 15px;
     border: 1px solid #80ced8;
     font-size: 1.1em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+    border-radius: 25px;
+    background-color: #ebf3f5;
   }
 
 form p {
@@ -20,4 +22,14 @@ form p {
   
 .form-div.login {
     margin-top: 100px;
+}
+
+#login_page {
+    background-image: url(../img/manage.jpg);
+}
+
+#signup_page {
+    background-image: url(../img/manage2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 110%;
 }

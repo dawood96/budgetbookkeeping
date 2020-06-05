@@ -77,7 +77,6 @@ include 'controllers/dashController.php';
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fa fa-money" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>

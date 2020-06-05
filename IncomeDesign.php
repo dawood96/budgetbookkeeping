@@ -134,7 +134,21 @@
                         }
                    ?>
 
+                   <!-- valid update -->
+                   <?php 
+                        if(isset($_GET['updated'])){
+                            $Message = $_GET['updated'];
+                            $Message = "The Record Was Updated";
 
+                   ?>
+                    <div class="alert alert-info text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
+
+                    
 
                     <input type="hidden" name="id" value="<?php echo $id_trans; ?>">
                     <div class="form-group">
@@ -144,8 +158,8 @@
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
-                        <textarea name="comment" value="<?php echo $com; ?>" placeholder="Write a Note"
-                            class=" text-center form-control form-control-lg"></textarea>
+                        <textarea name="comment" placeholder="Write a Note"
+                            class=" text-center form-control form-control-lg"><?php echo $com; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Date</label>
@@ -171,8 +185,14 @@
     <br>
 
     <?php  
-        $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id ORDER BY timestamp DESC";
-        $result = mysqli_query($conn, $result);
+        $query1 = "SELECT income_trans_id, income, timestamp, comment FROM csi3370_income_trans where user_id = $user_id ORDER BY timestamp DESC";
+        $result = mysqli_query($conn, $query1);
+
+        //checks for any errors
+        if (!$result) {
+            printf("Error: %s\n", mysqli_error($conn));
+            exit();
+        }
         // pre_r($result->fetch_assoc());
     ?>
 
@@ -198,7 +218,7 @@
                             <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </tfoot>
-                    <?php while ($row = $result->fetch_assoc() ): ?>
+                    <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $row['income_trans_id']; ?></td>
                         <td><?php echo $row['income']; ?></td>

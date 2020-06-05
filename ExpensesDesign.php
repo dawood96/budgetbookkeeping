@@ -220,27 +220,54 @@
                         }
                    ?>
 
+                    <!-- valid delete -->
+                    <?php 
+                        if(isset($_GET['deleted'])){
+                            $Message = $_GET['deleted'];
+                            $Message = "The Record Was Deleted";
 
+                   ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
 
+                   <!-- valid update -->
+                   <?php 
+                        if(isset($_GET['updated'])){
+                            $Message = $_GET['updated'];
+                            $Message = "The Record Was Updated";
 
+                   ?>
+                    <div class="alert alert-info text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
+
+                    <input type="hidden" name="id" value="<?php echo $id_trans; ?>">
                     <div class="form-group">
                         <label>Amount</label>
                         <input name="expenseAmount" required placeholder="Enter Expense Amount. Ex, 96.12"
-                            class=" text-center form-control form-control-lg">
+                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
                         <textarea name="comment" cols="55" placeholder="Write a Note"
-                            class=" text-center form-control form-control-lg"></textarea>
+                            class=" text-center form-control form-control-lg"><?php echo $com; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Date</label>
                         <input type="date" name="date" required placeholder="Enter Transaction Date"
-                            class="text-center form-control form-control-lg">
+                            value="<?php echo $date; ?>" class="text-center form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label>Category</label>
                         <select required type="text" name="category" class="text-center form-control form-control-lg">
+                            <option disabled selected value><?php echo $type; ?></option>
                             <option value="BILLS" name="bills">BILLS/PAYMENTS</option>
                             <option value="FOOD" name="food">FOOD/DRINKS</option>
                             <option value="SHOPPING" name="shopping">SHOPPING</option>
@@ -250,7 +277,15 @@
                         </select><br>
                     </div>
                     <div class="form-group">
+                        <?php 
+                            if ($update == true):
+                        ?>
+                        <button type="submit" class="btn btn-success" name="update">Update</button><br><br>
+                        <?php 
+                            else:
+                        ?>
                         <button type="submit" class="btn btn-success" name="add_expense">ADD</button><br><br>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>
@@ -258,44 +293,69 @@
     </div>
     <br>
 
+    <?php  
+        $query1 = "SELECT expense_trans_id, expense, type_of_expense, timestamp, comment FROM csi3370_expenses_trans where user_id = $user_id ORDER BY timestamp DESC";
+        $result = mysqli_query($conn, $query1);
 
+        //checks for any errors
+        if (!$result) {
+            printf("Error: %s\n", mysqli_error($conn));
+            exit();
+        }
+        // pre_r($result->fetch_assoc());
+    ?>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">DataTables Example</h6>
-        </div>
-        <div class="container">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th width="25%">Transaction ID</th>
-                            <th width="25%">amount</th>
-                            <th width="25%">date</th>
-                            <th width="25%">comment</th>
+                <table class="table">
+                    <thead class="thead-light table-bordered">
+                        <tr class="text-center">
+                            <th class="text-center">Transaction ID</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Type of Expense</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>amount</th>
-                            <th>date</th>
-                            <th>comment</th>
+                    <tfoot class="thead-light table-bordered">
+                        <tr class="text-center">
+                            <th class="text-center">Transaction ID</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Type of Expense</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Comment</th>
+                            <th class="text-center" colspan="2">Action</th>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo $row['expense_trans_id']; ?></td>
+                        <td><?php echo $row['expense']; ?></td>
+                        <td><?php echo $row['type_of_expense']; ?></td>
+                        <td><?php echo $row['timestamp']; ?></td>
+                        <td><?php echo $row['comment']; ?></td>
+                        <td>
+                            <a href="ExpensesDesign.php?edit= <?php echo $row['expense_trans_id']; ?>"
+                                class="btn btn-info">Edit</a>
+                            <a href="ExpensesDesign.php?delete= <?php echo $row['expense_trans_id']; ?>"
+                                class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
                 </table>
             </div>
         </div>
-    </div>
+
+        <?php 
+        function pre_r ($array){
+            echo '<pre>';
+            print_r($array);
+            echo '</pre>';
+        }
+    ?>
+    </div>                    
 
     <!-- Bootstrap JS library -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

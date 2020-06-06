@@ -30,39 +30,41 @@ include 'controllers/dashController.php';
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body id="myPage">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-            </div>
-            <div class="navbar-brand">Welcome, <?php  echo $_SESSION['FName'];?></div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a href="dashboard.php">DASHBOARD</a></li>
-                    <li class="nav-item"><a href="IncomeDesign.php">ADD CASH</a></li>
-                    <li class="nav-item"><a href="ExpensesDesign.php">ADD EXPENSES</a></li>
-                    <li class="nav-item"><a href="#">REPORTS</a></li>
-                    <li class="nav-item"><a href="#">BRAINSTORMING</a></li>
-                    <li class="nav-item"><a href="logout.php">SIGN OUT</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
+    <div class="topnav" id="myTopnav">
+        <div class="navbar-brand">Welcome, <?php  echo $_SESSION['FName'];?></div>
+         
+         <a href="logout.php">SIGN OUT</a>
+         <a href="#">BRAINSTORMING</a>
+         <a href="#">REPORTS</a>
+        <a href="ExpensesDesign.php">ADD EXPENSES</a>
+      <a href="IncomeDesign.php">ADD CASH</a>
+<a href="dashboard.php" class="active">DASHBOARD</a>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
     <div class="container text-center text-dark">
         <h1> <?php  echo $_SESSION['FName'];?>'s Dashboard </h1>
     </div>
     <br>
-
 
     <!-- Content Row -->
     <div class="row">

@@ -51,7 +51,7 @@ include 'controllers/dashController.php';
                     <li class="nav-item"><a href="IncomeDesign.php">ADD CASH</a></li>
                     <li class="nav-item"><a href="ExpensesDesign.php">ADD EXPENSES</a></li>
                     <li class="nav-item"><a href="#">REPORTS</a></li>
-                    <li class="nav-item"><a href="#">BRAINSTORMING</a></li>
+                    <li class="nav-item"><a href="brainstorming.php">BRAINSTORMING</a></li>
                     <li class="nav-item"><a href="logout.php">SIGN OUT</a></li>
                 </ul>
             </div>
@@ -246,17 +246,17 @@ include 'controllers/dashController.php';
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead class="thead-dark table-bordered">
                             <tr class="text-center table-success">
-                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">ID</th>
                                 <th class="text-center">Amount</th>
                                 <th class="text-center">Date</th>
                             </tr>
                         </thead>
                         <tfoot class="thead-light table-bordered">
                             <tr class="text-center">
-                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">ID</th>
                                 <th class="text-center">Amount</th>
                                 <th class="text-center">Date</th>
                             </tr>
@@ -274,17 +274,17 @@ include 'controllers/dashController.php';
 
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead class="thead-dark table-bordered">
                             <tr class="text-center table-danger">
-                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">ID</th>
                                 <th class="text-center">Amount</th>
                                 <th class="text-center">Date</th>
                             </tr>
                         </thead>
                         <tfoot class="thead-light table-bordered">
                             <tr class="text-center">
-                                <th class="text-center">Transaction ID</th>
+                                <th class="text-center">ID</th>
                                 <th class="text-center">Amount</th>
                                 <th class="text-center">Date</th>
                             </tr>

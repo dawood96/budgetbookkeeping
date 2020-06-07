@@ -12,6 +12,19 @@ if(!isset($_SESSION['U_D'])) {
 include 'controllers/dashController.php';
 
 
+    $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+    $result = mysqli_query($conn, $result);
+
+    $result_expense = "SELECT expense_trans_id, expense, timestamp, comment  FROM csi3370_expenses_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
+    $result_expense = mysqli_query($conn, $result_expense);
+
+    $result_task = "SELECT task_id, task, timestamp FROM csi3370_task where user_id = $user_id AND is_done = 0 ORDER BY timestamp DESC LIMIT 6";
+    $result_task = mysqli_query($conn, $result_task);
+
+    $result_task_done = "SELECT task_id, task FROM csi3370_task where user_id = $user_id AND is_done = 1 ORDER BY is_done DESC LIMIT 6";
+    $result_task_done = mysqli_query($conn, $result_task_done);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +48,8 @@ include 'controllers/dashController.php';
 
 </head>
 
-<body id="myPage">
-    
-<nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
+<body id="myPage">   
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -151,17 +163,9 @@ include 'controllers/dashController.php';
     <hr style="width: 70%;">
 
 
-    <?php  
-        $result = "SELECT income_trans_id, income, timestamp, comment  FROM csi3370_income_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
-        $result = mysqli_query($conn, $result);
-
-        $result_expense = "SELECT expense_trans_id, expense, timestamp, comment  FROM csi3370_expenses_trans where user_id = $user_id AND timestamp >= (CURDATE() - INTERVAL 1 MONTH )  ORDER BY timestamp DESC LIMIT 10";
-        $result_expense = mysqli_query($conn, $result_expense);
-    ?>
-
     <div class="container">
         <div>
-            <h3>Last 30-day Summary</h3>
+            <h3><strong>Last 30-day Summary</strong></h3>
             <h5>(From <?php  echo date('Y/m/d', strtotime('-30 days')); ?> To <?php  echo date("Y/m/d"); ?>)</h5>
             <h4>
                 Hello<span class="text-primary text-uppercase"> <?php  echo $_SESSION['FName'];?></span>, this is your summary of the past 30 days. <br>
@@ -296,6 +300,89 @@ include 'controllers/dashController.php';
                             <td><?php echo $row['expense_trans_id']; ?></td>
                             <td class="font-weight-bold"><?php echo $row['expense']; ?></td>
                             <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr style="width: 70%;">
+
+    <div class="container">
+        <h2><strong>Your Tasks</strong></h2>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="">
+                            <tr class="text-center bg-secondary text-white">
+                                <th class="text-center">Unaccomplished Tasks</th>
+                            </tr>
+                        </thead>
+                        <?php while ($row = $result_task->fetch_assoc() ): ?>
+                        <tr class="">
+                            <td class="font-weight-bold text-primary"><?php echo $row['task']; ?></td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 mb-4">
+                        <a href="brainstorming.php">
+                            <div class="card border-primary border-primary-expense shadow h-100 py-2 bg-info text-white rounded-pill">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Accomplished</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $accomplished_task_total; ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 mb-4">
+                        <a href="brainstorming.php">
+                            <div class="card  shadow h-100 py-2 bg-secondary text-white rounded-pill">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Unaccomplished</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $unaccomplished_task_total; ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="">
+                            <tr class="text-center bg-info text-white">
+                                <th class="text-center">Accomplished Tasks</th>
+                            </tr>
+                        </thead>
+                        <?php while ($row = $result_task_done->fetch_assoc() ): ?>
+                        <tr class="">
+                            <td class="font-weight-bold text-info "><?php echo $row['task']; ?></td>
                         </tr>
                         <?php endwhile; ?>
                     </table>

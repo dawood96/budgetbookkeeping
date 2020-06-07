@@ -94,7 +94,7 @@ include 'controllers/brainstormingController.php';
         
 
         <form method="POST" action="brainstorming.php" class="input_form">
-            <input class="inputArea" type="text" required placeholder="Enter a tasks" name="task" class="task_input">
+            <input class="inputArea" type="text" required placeholder="Enter a task" name="task" class="task_input">
             <button class ="custBtn" type="submit" name="submit_task" id="add_btn" >Add Task</button>
         </form>
     </div>

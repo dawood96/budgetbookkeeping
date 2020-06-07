@@ -155,5 +155,23 @@ $balanceIC1 = number_format($balance, 2,'.', ',');
         }
     }
 
+    // This is for the number of accomplished and not accomplished tasks
+    $unaccomplished_task = "SELECT COUNT(task)  FROM csi3370_task where user_id = $user_id AND is_done = 0";
+    $unaccomplished_task = mysqli_query($conn, $unaccomplished_task);
+    if ($unaccomplished_task->num_rows != 0) {
+        while ($rows = $unaccomplished_task->fetch_assoc()) {
+            $unaccomplished_task_total = $rows['COUNT(task)'];
+        }
+    }
+
+
+    $accomplished_task = "SELECT COUNT(task)  FROM csi3370_task where user_id = $user_id AND is_done = 1";
+    $accomplished_task = mysqli_query($conn, $accomplished_task);
+    if ($accomplished_task->num_rows != 0) {
+        while ($rows = $accomplished_task->fetch_assoc()) {
+            $accomplished_task_total = $rows['COUNT(task)'];
+        }
+    }
+
 
 ?>

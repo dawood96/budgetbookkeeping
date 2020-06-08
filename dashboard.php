@@ -65,7 +65,7 @@ include 'controllers/dashController.php';
                     <li class="nav-item"><a href="dashboard.php">DASHBOARD</a></li>
                     <li class="nav-item"><a href="IncomeDesign.php">ADD CASH</a></li>
                     <li class="nav-item"><a href="ExpensesDesign.php">ADD EXPENSES</a></li>
-                    <li class="nav-item"><a href="#">REPORTS</a></li>
+                    <li class="nav-item"><a href="reports.php">REPORTS</a></li>
                     <li class="nav-item"><a href="brainstorming.php">BRAINSTORMING</a></li>
                     <li class="nav-item"><a href="logout.php">SIGN OUT</a></li>
                 </ul>

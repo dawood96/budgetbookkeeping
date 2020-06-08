@@ -140,7 +140,7 @@
       <div class="card border-0 shadow">
         <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Dawood Shammas</h5>
+          <h5 class="card-title mb-0">David Shammas</h5>
           <div class="card-text text-black-50">Lead Developer</div>
         </div>
       </div>

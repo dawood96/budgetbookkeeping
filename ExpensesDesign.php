@@ -22,7 +22,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- Font-awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -74,7 +74,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $bills_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $food_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $shopping_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $gifts_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $tech_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $other_expense; ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class=""></i>
                         </div>
                     </div>
                 </div>
@@ -282,11 +282,11 @@
                         <?php 
                             if ($update == true):
                         ?>
-                        <button type="submit" class="btn btn-success" name="update">Update</button><br><br>
+                        <button type="submit" class="btn btn-success" name="update"><i class='fas fa-edit'></i> Update</button><br><br>
                         <?php 
                             else:
                         ?>
-                        <button type="submit" class="btn btn-success" name="add_expense">ADD</button><br><br>
+                        <button type="submit" class="btn btn-success" name="add_expense">ADD <i class="fas fa-plus"></i></button><br><br>
                         <?php endif; ?>
                     </div>
                 </form>
@@ -340,9 +340,9 @@
                         <td><?php echo $row['comment']; ?></td>
                         <td>
                             <a href="ExpensesDesign.php?edit= <?php echo $row['expense_trans_id']; ?>"
-                                class="btn btn-info">Edit</a>
+                                class="btn btn-info round-btn"><i class='fas fa-edit'></i></a>
                             <a href="ExpensesDesign.php?delete= <?php echo $row['expense_trans_id']; ?>"
-                                class="btn btn-danger">Delete</a>
+                                class="btn btn-danger round-btn">X</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>

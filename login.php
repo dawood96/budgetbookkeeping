@@ -16,7 +16,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- Font-awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style2.css">
 
@@ -102,7 +102,7 @@
                             <input type="password" name="password" required placeholder="Enter Your Password" class="form-control form-control-lg">
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Log In</button>
+                            <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">Log In <i class="fas fa-sign-in-alt"></i></button>
                         </div>
                         <p class="text-center">
                             Not yet register? <a href=login.php>Sign Up</a>

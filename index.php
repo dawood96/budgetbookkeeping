@@ -123,69 +123,74 @@
     <div class="container">
         <div class="text-center">
             <h1>Meet the team</h1>
-              <div class="container">
-  <div class="row">
-    <!-- Team Member 1 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Jessica Mccoy</h5>
-          <div class="card-text text-black-50">Project Manager</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">David Shammas</h5>
-          <div class="card-text text-black-50">Lead Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 3 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Maurice Fuentes</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 4 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Qasim Rathur</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Samantha Belz</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Tyler Kavanagh</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <!-- Team Member 1 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Jessica Mccoy</h5>
+                                <div class="card-text text-black-50">Project Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">David Shammas</h5>
+                                <div class="card-text text-black-50">Full stack Lead Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Maurice Fuentes</h5>
+                                <div class="card-text text-black-50">Web Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <!-- Team Member 4 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Qasim Rathur</h5>
+                                <div class="card-text text-black-50">Web Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Samantha Belz</h5>
+                                <div class="card-text text-black-50">Web Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 6 -->
+                    <div class="col-xl-4 col-md-4 col-sm-12 zoom-in mb-4">
+                        <div class="card border-0 shadow">
+                            <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Tyler Kavanagh</h5>
+                                <div class="card-text text-black-50">Web Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <br>
@@ -228,7 +233,8 @@
             <h2>What are you WAITING for?!</h2>
             <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item">
-                    <h3 class="mb-1">Join our community and be part of <?php echo $total_number_of_users ?> active users.</h3>
+                    <h3 class="mb-1">Join our community and be part of <?php echo $total_number_of_users ?> active
+                        users.</h3>
                 </li>
                 <li class="list-inline-item">
                     <a href="signup.php" class="btn btn-outline-white btn-rounded">Sign up!</a>
@@ -246,18 +252,9 @@
             style="border:0; height: 100%; width:100%" allowfullscreen></iframe>
     </div>
 
-    <br?
+    <br> <?php include 'footer.php';?>
 
-
-
-
-    <?php include 'footer.php';
-    ?>
-
-
-
-
-     <!-- Bootstrap JS library  -->
+    <!-- Bootstrap JS library -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>

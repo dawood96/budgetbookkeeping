@@ -73,56 +73,89 @@ include 'controllers/dashController.php';
         </div>
     </nav>
 
-    <div class="container text-center text-dark">
-        <h1> <?php  echo $_SESSION['FName'];?>'s Dashboard </h1>
-    </div>
-    <br>
+    <div class="main-div">
+        <div class="container text-center text-dark">
+            <h1> <?php  echo $_SESSION['FName'];?>'s Dashboard </h1>
+        </div>
+        <br>
 
-    <!-- Content Row -->
-    <div class="row">
+        <!-- Content Row -->
+        <div class="row">
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
-            <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2 ">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold  text-uppercase mb-1">Balance</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC1; ?></div>
-                        </div>
-                        <div class="col-auto">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+                <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2 flip-box-inner">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2 flip-box-front">
+                                <div class="text-xs font-weight-bold  text-uppercase p-1 mb-1">Balance</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC1; ?></div>
+                            </div>
+                            <div class="col mr-2 flip-box-back">
+                                <div class="text-xs font-weight-bold  text-uppercase p-1 mb-1">$<?php  echo $balanceIC1; ?></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">This is calculated by subtracting expenses from income.</div>
+                            </div>
+                            <div class="col-auto">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
-            <a href="IncomeDesign.php">
-                <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold  text-uppercase mb-1">Total Income </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC1; ?> </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="far fa-calendar fa-2x text-gray-300"></i>
+            
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+                <a href="IncomeDesign.php">
+                    <div class="card border-left-primary border-left-primary-income shadow h-100 py-2 flip-box-inner">
+                        <div class="card-body ">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2 flip-box-front">
+                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Total Income </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC1; ?> </div>
+                                </div>
+                                <div class="col mr-2 flip-box-back">
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">$<?php  echo $incomeIC1; ?> </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">This is your cumulative reported income amount since you joined. </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
-            <a href="ExpensesDesign.php">
-                <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+                <a href="ExpensesDesign.php">
+                    <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2 flip-box-inner">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2 flip-box-front">
+                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Total EXPENSES </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC1; ?></div>
+                                </div>
+                                <div class="col mr-2 flip-box-back">
+                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">$<?php  echo $expenseIC1; ?></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">This is your cumulative reported expenses amount since you joined.</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+                <div class="card border-left-primary border-left-primary-total shadow h-100 py-2 flip-box-inner">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1">Total EXPENSES </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC1; ?></div>
+                            <div class="col mr-2 flip-box-front">
+                                <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Transactions</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_number_of_transaction; ?></div>
+                            </div>
+                            <div class="col mr-2 flip-box-back">
+                                <div class="text-xs font-weight-bold text-uppercase p-1 mb-1"><?php echo $total_number_of_transaction; ?></div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">This is the total number of all your income and expenses transactions.</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -130,262 +163,246 @@ include 'controllers/dashController.php';
                         </div>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12">
-            <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Number of transactions</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <?php echo $total_number_of_transaction; ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-    <br>
+        <br>
 
-    <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
-        <div id="donutchart" style="width: 45%px; height: 400px; "></div>
-        </div>
-
-        <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
-        <div id="top_x_div" style="width: 45%px; height: 400px;"></div>
-        </div>
-    </div>
-    <hr style="width: 70%;">
-
-
-    <div class="container">
-        <div>
-            <h3><strong>Last 30-day Summary</strong></h3>
-            <h5>(From <?php  echo date('Y/m/d', strtotime('-30 days')); ?> To <?php  echo date("Y/m/d"); ?>)</h5>
-            <h4>
-                Hello<span class="text-primary text-uppercase"> <?php  echo $_SESSION['FName'];?></span>, this is your summary of the past 30 days. <br>
-                You have reported <span class="text-success"><?php  echo $last_month_income_trans; ?></span> income transactions and the total money of these transactions 
-                is <span class="text-success">$<?php  echo $last_month_income; ?></span>.
-                You have also reported <span class="text-danger"><?php  echo $last_month_expense_trans; ?></span> expense transactions. 
-                The total of your expenses for the past 30 days is <span class="text-danger">$<?php  echo $last_month_expense; ?></span>.
-            </h5>
-        </div>
-        <hr>
         <div class="row">
-            <div class="col-xl-3 col-md-6 mb-4">
-                <a href="IncomeDesign.php">
-                    <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">Last 30-days Income</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_income; ?> </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
+            <div id="donutchart" style="width: 45%px; height: 400px; "></div>
             </div>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <a href="IncomeDesign.php">
-                    <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold  text-uppercase mb-1"># of transactions</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_income_trans; ?> </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <a href="ExpensesDesign.php">
-                    <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-uppercase mb-1">Last 30-days Expenses</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_expense; ?></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <a href="ExpensesDesign.php">
-                    <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-uppercase mb-1"># of transactions </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_expense_trans; ?></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
+            <div id="top_x_div" style="width: 45%px; height: 400px;"></div>
             </div>
         </div>
-        
         <hr style="width: 70%;">
 
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="thead-dark table-bordered">
-                            <tr class="text-center table-success">
-                                <th class="text-center">ID</th>
-                                <th class="text-center">Amount</th>
-                                <th class="text-center">Date</th>
-                            </tr>
-                        </thead>
-                        <tfoot class="thead-light table-bordered">
-                            <tr class="text-center">
-                                <th class="text-center">ID</th>
-                                <th class="text-center">Amount</th>
-                                <th class="text-center">Date</th>
-                            </tr>
-                        </tfoot>
-                        <?php while ($row = $result->fetch_assoc() ): ?>
-                        <tr class="table-success">
-                            <td><?php echo $row['income_trans_id']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['income']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+
+        <div class="container">
+            <div class="zoom-in">
+                <h3><strong>Last 30-day Summary</strong></h3>
+                <h5>(From <?php  echo date('Y/m/d', strtotime('-30 days')); ?> To <?php  echo date("Y/m/d"); ?>)</h5>
+                <h4>
+                    Hello<span class="text-primary text-uppercase"> <?php  echo $_SESSION['FName'];?></span>, this is your summary of the past 30 days. <br>
+                    You have reported <span class="text-success"><?php  echo $last_month_income_trans; ?></span> income transactions and the total money of these transactions 
+                    is <span class="text-success">$<?php  echo $last_month_income; ?></span>.
+                    You have also reported <span class="text-danger"><?php  echo $last_month_expense_trans; ?></span> expense transactions. 
+                    The total of your expenses for the past 30 days is <span class="text-danger">$<?php  echo $last_month_expense; ?></span>.
+                </h5>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="IncomeDesign.php">
+                        <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold  text-uppercase mb-1">Last 30-days Income</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_income; ?> </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="IncomeDesign.php">
+                        <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold  text-uppercase mb-1"># of transactions</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_income_trans; ?> </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="ExpensesDesign.php">
+                        <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">Last 30-days Expenses</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_expense; ?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="ExpensesDesign.php">
+                        <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1"># of transactions </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_expense_trans; ?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
+            
+            <hr style="width: 70%;">
 
-            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="thead-dark table-bordered">
-                            <tr class="text-center table-danger">
-                                <th class="text-center">ID</th>
-                                <th class="text-center">Amount</th>
-                                <th class="text-center">Date</th>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-dark table-bordered">
+                                <tr class="text-center table-success">
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Date</th>
+                                </tr>
+                            </thead>
+                            <tfoot class="thead-light table-bordered">
+                                <tr class="text-center">
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Date</th>
+                                </tr>
+                            </tfoot>
+                            <?php while ($row = $result->fetch_assoc() ): ?>
+                            <tr class="table-success zoom-in">
+                                <td><?php echo $row['income_trans_id']; ?></td>
+                                <td class="font-weight-bold"><?php echo $row['income']; ?></td>
+                                <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                             </tr>
-                        </thead>
-                        <tfoot class="thead-light table-bordered">
-                            <tr class="text-center">
-                                <th class="text-center">ID</th>
-                                <th class="text-center">Amount</th>
-                                <th class="text-center">Date</th>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-dark table-bordered">
+                                <tr class="text-center table-danger">
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Date</th>
+                                </tr>
+                            </thead>
+                            <tfoot class="thead-light table-bordered">
+                                <tr class="text-center">
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Date</th>
+                                </tr>
+                            </tfoot>
+                            <?php while ($row = $result_expense->fetch_assoc() ): ?>
+                            <tr class="table-danger zoom-in">
+                                <td><?php echo $row['expense_trans_id']; ?></td>
+                                <td class="font-weight-bold"><?php echo $row['expense']; ?></td>
+                                <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                             </tr>
-                        </tfoot>
-                        <?php while ($row = $result_expense->fetch_assoc() ): ?>
-                        <tr class="table-danger">
-                            <td><?php echo $row['expense_trans_id']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['expense']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <hr style="width: 70%;">
-
-    <div class="container">
-        <h2><strong>Your Tasks</strong></h2>
         <br>
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered">
-                        <thead class="">
-                            <tr class="text-center bg-secondary text-white">
-                                <th class="text-center">Unaccomplished Tasks</th>
-                            </tr>
-                        </thead>
-                        <?php while ($row = $result_task->fetch_assoc() ): ?>
-                        <tr class="">
-                            <td class="font-weight-bold text-primary"><?php echo $row['task']; ?></td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
-                </div>
-            </div>
+        <hr style="width: 70%;">
 
-            <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
-                <div class="row">
-                    <div class="col-xl-12 col-md-12 mb-4">
-                        <a href="brainstorming.php">
-                            <div class="card border-primary border-primary-expense shadow h-100 py-2 bg-info text-white rounded-pill">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Accomplished</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $accomplished_task_total; ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+        <div class="container">
+            <h2><strong>Your Tasks</strong></h2>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="">
+                                <tr class="text-center bg-secondary text-white">
+                                    <th class="text-center">Unaccomplished Tasks</th>
+                                </tr>
+                            </thead>
+                            <?php while ($row = $result_task->fetch_assoc() ): ?>
+                            <tr class="">
+                                <td class="font-weight-bold text-primary"><?php echo $row['task']; ?></td>
+                            </tr>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 mb-4 zoom-in">
+                            <a href="brainstorming.php">
+                                <div class="card border-primary border-primary-expense shadow h-100 py-2 bg-info text-white rounded-pill">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Accomplished</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $accomplished_task_total; ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-md-12 mb-4">
-                        <a href="brainstorming.php">
-                            <div class="card  shadow h-100 py-2 bg-secondary text-white rounded-pill">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Unaccomplished</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $unaccomplished_task_total; ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 mb-4 zoom-in">
+                            <a href="brainstorming.php">
+                                <div class="card  shadow h-100 py-2 bg-secondary text-white rounded-pill">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Unaccomplished</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $unaccomplished_task_total; ?></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered">
-                        <thead class="">
-                            <tr class="text-center bg-info text-white">
-                                <th class="text-center">Accomplished Tasks</th>
+                <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="">
+                                <tr class="text-center bg-info text-white">
+                                    <th class="text-center">Accomplished Tasks</th>
+                                </tr>
+                            </thead>
+                            <?php while ($row = $result_task_done->fetch_assoc() ): ?>
+                            <tr class="">
+                                <td class="font-weight-bold text-info "><?php echo $row['task']; ?></td>
                             </tr>
-                        </thead>
-                        <?php while ($row = $result_task_done->fetch_assoc() ): ?>
-                        <tr class="">
-                            <td class="font-weight-bold text-info "><?php echo $row['task']; ?></td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

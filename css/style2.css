@@ -33,3 +33,19 @@ form p {
     background-repeat: no-repeat;
     background-size: 100% 110%;
 }
+
+.top-nav {
+    overflow: hidden;
+      position: fixed; 
+      margin-bottom: 0;
+      z-index: 9999;
+      border: 0;
+      font-size: 14px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 2px;
+      border-radius: 0;
+      top: 0; 
+      width: 100%; 
+      padding-right: 25px;
+      padding-left: 25px;
+  }

@@ -31,22 +31,22 @@
 
 </head>
 
-<body id="expense_page" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body id="" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="IncomeDesign.php">ADD CASH</a>
+        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ExpensesDesign.php">ADD EXPENSES</a>
+        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="reports.php">REPORTS</a>

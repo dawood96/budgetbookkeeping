@@ -32,21 +32,21 @@
 </head>
 
 <body id="income_page" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="IncomeDesign.php">ADD CASH</a>
+        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ExpensesDesign.php">ADD EXPENSES</a>
+        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="reports.php">REPORTS</a>
@@ -72,7 +72,7 @@
         <div class="col-xl-4 col-md-6 mb-4">
             <!-- We can have anything here -->
         </div>
-        <div class="col-xl-4 col-md-12 mb-4">
+        <div class="col-xl-4 col-md-12 mb-4 ">
             <div class="card border-left-success border-left-success-balance shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -161,28 +161,28 @@
                     <div class="form-group">
                         <label>Amount</label>
                         <input name="incomeAmount" required placeholder="Enter Income Amount. Ex, 25.75"
-                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg">
+                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg rounded-pill">
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
                         <textarea name="comment" placeholder="Write a Note"
-                            class=" text-center form-control form-control-lg"><?php echo $com; ?></textarea>
+                            class=" text-center form-control form-control-lg "><?php echo $com; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Date</label>
                         <input type="date" name="date" value="<?php echo $date; ?>" required
-                            placeholder="Enter Transaction Date" class="text-center form-control form-control-lg">
+                            placeholder="Enter Transaction Date" class="text-center form-control form-control-lg rounded-pill">
                     </div>
                     <div class="form-group">
 
                         <?php 
                             if ($update == true):
                         ?>
-                        <button type="submit" class="btn btn-success" name="update"><i class='fas fa-edit'></i> Update</button><br><br>
+                        <button type="submit" class="btn btn-success rounded-pill" name="update"><i class='fas fa-edit'></i> Update</button><br><br>
                         <?php 
                             else:
                         ?>
-                        <button type="submit" class="btn btn-success" name="add_income">ADD <i class="fas fa-plus"></i></button><br><br>
+                        <button type="submit" class="btn btn-success rounded-pill" name="add_income">ADD <i class="fas fa-plus"></i></button><br><br>
                         <?php endif; ?>
                     </div>
                 </form>

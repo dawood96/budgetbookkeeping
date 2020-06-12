@@ -22,8 +22,9 @@ include 'controllers/brainstormingController.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Bookkeeping</title>
     <!-- Bootstrap CSS library -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -36,21 +37,21 @@ include 'controllers/brainstormingController.php';
 </head>
 
 <body id="brainstorming_page">
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="IncomeDesign.php">ADD CASH</a>
+        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ExpensesDesign.php">ADD EXPENSES</a>
+        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="reports.php">REPORTS</a>
@@ -64,7 +65,6 @@ include 'controllers/brainstormingController.php';
     </ul>
   </div>
 </nav>
-
 
     <div class="container">
         <div class="heading header_brainstorming">
@@ -98,11 +98,11 @@ include 'controllers/brainstormingController.php';
             }
         ?>
 
-        
+
 
         <form method="POST" action="brainstorming.php" class="input_form">
             <input class="inputArea" type="text" required placeholder="Enter a task" name="task" class="task_input">
-            <button class ="custBtn" type="submit" name="submit_task" id="add_btn" >Add Task</button>
+            <button class="custBtn" type="submit" name="submit_task" id="add_btn">Add Task</button>
         </form>
     </div>
     <br>
@@ -110,6 +110,7 @@ include 'controllers/brainstormingController.php';
 
     <div class="container">
         <h3>Tasks that need to be Accomplished</h3>
+        <h5>Click on the &#10004; to mark your task as completed.</h5>
     </div>
     <br>
 
@@ -145,18 +146,18 @@ include 'controllers/brainstormingController.php';
                     </tfoot>
 
                     <?php while ($row = $result_task->fetch_assoc() ): ?>
-                        <tr class="table-info">
-                            <td><?php echo $row['task_id']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['task']; ?></td>
-                            <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
-                            <td>
-                                <a href="brainstorming.php?done= <?php echo $row['task_id']; ?>"
-                                class="btn btn-danger">&#10004;</a>
-                                <a href="brainstorming.php?delete= <?php echo $row['task_id']; ?>"
-                                class="btn btn-danger">X</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
+                    <tr class="table-info">
+                        <td><?php echo $row['task_id']; ?></td>
+                        <td class="font-weight-bold"><?php echo $row['task']; ?></td>
+                        <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
+                        <td>
+                            <a href="brainstorming.php?done= <?php echo $row['task_id']; ?>"
+                                class="btn btn-danger rounded-pill">&#10004;</a>
+                            <a href="brainstorming.php?delete= <?php echo $row['task_id']; ?>"
+                                class="btn btn-danger rounded-pill">X</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
 
                 </table>
             </div>
@@ -166,6 +167,7 @@ include 'controllers/brainstormingController.php';
     <hr style="width: 70%;">
     <div class="container">
         <h3>Your Accomplished Tasks</h3>
+        <h5>Click on the &#10005; to mark your task as completed.</h5>
     </div>
     <br>
 
@@ -187,25 +189,31 @@ include 'controllers/brainstormingController.php';
                     </tfoot>
 
                     <?php while ($row = $result_task_done->fetch_assoc() ): ?>
-                        <tr class="table-primary">
-                            <td class="font-weight-bold"><?php echo $row['task']; ?></td>
-                            <td>
-                                <a href="brainstorming.php?delete= <?php echo $row['task_id']; ?>"
-                                class="btn btn-danger">X</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
+                    <tr class="table-primary">
+                        <td class="font-weight-bold"><?php echo $row['task']; ?></td>
+                        <td>
+                            <a href="brainstorming.php?delete= <?php echo $row['task_id']; ?>"
+                                class="btn btn-danger rounded-pill">X</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
 
                 </table>
             </div>
         </div>
     </div>
 
- <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 
 
 </body>

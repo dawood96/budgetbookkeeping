@@ -35,11 +35,9 @@ include 'controllers/dashController.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Bookkeeping</title>
     <!-- Bootstrap CSS library -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style.css">  
@@ -52,21 +50,21 @@ include 'controllers/dashController.php';
 </head>
 
 <body id="myPage">   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-right">
       <li class="nav-item active">
         <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="IncomeDesign.php">ADD CASH</a>
+        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ExpensesDesign.php">ADD EXPENSES</a>
+        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="reports.php">REPORTS</a>
@@ -91,7 +89,7 @@ include 'controllers/dashController.php';
         <div class="row">
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box zoom-in">
                 <div class="card border-left-primary border-left-primary-balance shadow h-100 py-2 flip-box-inner">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -110,7 +108,7 @@ include 'controllers/dashController.php';
                 </div>
             </div>
             
-            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box zoom-in">
                 <a href="IncomeDesign.php">
                     <div class="card border-left-primary border-left-primary-income shadow h-100 py-2 flip-box-inner">
                         <div class="card-body ">
@@ -132,7 +130,7 @@ include 'controllers/dashController.php';
                 </a>
             </div>
 
-            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box zoom-in">
                 <a href="ExpensesDesign.php">
                     <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2 flip-box-inner">
                         <div class="card-body">
@@ -153,7 +151,7 @@ include 'controllers/dashController.php';
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box">
+            <div class="col-xl-3 col-md-6 mb-4 col-sm-12 col-xs-12 flip-box zoom-in">
                 <div class="card border-left-primary border-left-primary-total shadow h-100 py-2 flip-box-inner">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -177,11 +175,11 @@ include 'controllers/dashController.php';
 
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
-            <div id="donutchart" style="width: 45%px; height: 400px; "></div>
+            <div id="donutchart" style="width: 100%; height: 400px; "></div>
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 mb-4">
-            <div id="top_x_div" style="width: 45%px; height: 400px;"></div>
+            <div id="top_x_div" style="width: 100%; height: 400px;"></div>
             </div>
         </div>
         <hr style="width: 70%;">

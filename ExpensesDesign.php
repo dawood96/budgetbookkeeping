@@ -31,21 +31,21 @@
 </head>
 
 <body id="expense_page" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="IncomeDesign.php">ADD CASH</a>
+        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="ExpensesDesign.php">ADD EXPENSES</a>
+        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="reports.php">REPORTS</a>
@@ -60,7 +60,7 @@
   </div>
 </nav>
 
-
+    <br>
     <div class="container text-center text-dark">
         <h1> <?php  echo $_SESSION['FName'];?> <?php echo $_SESSION['LName'];  ?></h1>
     </div>
@@ -261,7 +261,7 @@
                     <div class="form-group">
                         <label>Amount</label>
                         <input name="expenseAmount" required placeholder="Enter Expense Amount. Ex, 96.12"
-                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg">
+                            value="<?php echo $amount; ?>" class=" text-center form-control form-control-lg rounded-pill">
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
@@ -271,11 +271,11 @@
                     <div class="form-group">
                         <label>Date</label>
                         <input type="date" name="date" required placeholder="Enter Transaction Date"
-                            value="<?php echo $date; ?>" class="text-center form-control form-control-lg">
+                            value="<?php echo $date; ?>" class="text-center form-control form-control-lg rounded-pill">
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        <select required type="text" name="category" class="text-center form-control form-control-lg">
+                        <select required type="text" name="category" class="text-center form-control form-control-lg rounded-pill">
                             <option disabled selected value><?php echo $type; ?></option>
                             <option value="BILLS" name="bills">BILLS/PAYMENTS</option>
                             <option value="FOOD" name="food">FOOD/DRINKS</option>
@@ -289,11 +289,11 @@
                         <?php 
                             if ($update == true):
                         ?>
-                        <button type="submit" class="btn btn-success" name="update"><i class='fas fa-edit'></i> Update</button><br><br>
+                        <button type="submit" class="btn btn-success rounded-pill" name="update"><i class='fas fa-edit'></i> Update</button><br><br>
                         <?php 
                             else:
                         ?>
-                        <button type="submit" class="btn btn-success" name="add_expense">ADD <i class="fas fa-plus"></i></button><br><br>
+                        <button type="submit" class="btn btn-success rounded-pill" name="add_expense">ADD <i class="fas fa-plus"></i></button><br><br>
                         <?php endif; ?>
                     </div>
                 </form>

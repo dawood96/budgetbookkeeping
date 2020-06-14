@@ -27,7 +27,7 @@ if (isset($_POST['add_expense'])) {
     $date = mysqli_real_escape_string($conn, $_POST['date']);
 
 
-    if (!is_numeric($expense) ){
+    if (!is_numeric($expense) || $expense < 0 ){
         header ("location: ExpensesDesign.php?invalid");
         exit();
     } else {
@@ -70,8 +70,13 @@ if (isset($_POST['update'])){
     $comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
 
-    $query1 = "UPDATE csi3370_expenses_trans SET expense='$expense', type_of_expense='$type', timestamp='$date', comment='$comment' where user_id = '$user_id' AND expense_trans_id = '$id_trans'";
-    mysqli_query($conn, $query1);
-    header('location: expensesDesign.php?updated');
+    if (!is_numeric($expense) || $expense < 0 ){
+        header ("location: ExpensesDesign.php?invalid");
+        exit();
+    } else {
+        $query1 = "UPDATE csi3370_expenses_trans SET expense='$expense', type_of_expense='$type', timestamp='$date', comment='$comment' where user_id = '$user_id' AND expense_trans_id = '$id_trans'";
+        mysqli_query($conn, $query1);
+        header('location: expensesDesign.php?updated');
+    }
 }
 ?>

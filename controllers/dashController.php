@@ -173,5 +173,39 @@ $balanceIC1 = number_format($balance, 2,'.', ',');
         }
     }
 
+    //Search feature in the dashboard page
+    if (!isset($_POST['search'])){
+        $search_result_id = "";
+        $search_result_trans = "";
+        $search_result_date =  "";
+    } 
+    else {
+        $id_search = mysqli_real_escape_string($conn, $_POST['search_id']);
+    
+        $query_search_income = "SELECT income_trans_id, income, timestamp FROM csi3370_income_trans  where user_id = '$user_id' AND  income_trans_id = '$id_search'";
+        $result_income = mysqli_query($conn, $query_search_income);
+
+        $query_search_expense = "SELECT expense_trans_id, expense, timestamp FROM csi3370_expenses_trans  where user_id = '$user_id' AND  expense_trans_id = '$id_search'";
+        $result_expense = mysqli_query($conn, $query_search_expense);
+
+        if ($result_income->num_rows != 0) {
+            while ($rows = $result_income->fetch_assoc()) {
+                $search_result_id = $rows['income_trans_id'];
+                $search_result_trans = $rows['income'];
+                $search_result_date = $rows['timestamp'];
+            }
+        } elseif ($result_expense->num_rows != 0) {
+            // $query_search_expense = "SELECT expense_trans_id, expense, type_of_expense FROM csi3370_expenses_trans  where user_id = '$user_id' AND  expense_trans_id = '$id_search'";
+            // $result = mysqli_query($conn, $query_search_expense);
+            while ($rows = $result_expense->fetch_assoc()) {
+                $search_result_id = $rows['expense_trans_id'];
+                $search_result_trans = $rows['expense'];
+                $search_result_date = $rows['timestamp'];
+            }
+        } 
+        else {
+            header ("location: dashboard.php?InvalidID");
+        }
+    }
 
 ?>

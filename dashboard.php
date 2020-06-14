@@ -33,57 +33,107 @@ include 'controllers/dashController.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Bookkeeping</title>
+    <title>Dashboard</title>
     <!-- Bootstrap CSS library -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- custom CSS file -->
     <link rel="stylesheet" href="css/style.css">  
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
-    
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
+    <!-- font awesome 'icons' -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body id="myPage">   
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
-  <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="IncomeDesign.php">INCOME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="reports.php">REPORTS</a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="brainstorming.php">BRAINSTORMING</a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="logout.php">SIGN OUT</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
+        <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard.php">DASHBOARD <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="IncomeDesign.php">INCOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ExpensesDesign.php">EXPENSES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reports.php">REPORTS</a>
+            </li>
+                <li class="nav-item">
+                <a class="nav-link" href="brainstorming.php">BRAINSTORMING</a>
+            </li>
+                <li class="nav-item">
+                <a class="nav-link" href="logout.php">SIGN OUT</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="main-div">
         <div class="container text-center text-dark">
             <h1> <?php  echo $_SESSION['FName'];?>'s Dashboard </h1>
         </div>
         <br>
+
+        <div class="row ">
+            <div class="col-auto mx-auto ">
+                <form class="form-inline md-form text-center mb-4" action="dashboard.php" data-ajax="false" method="POST">
+                    <input class="form-control mr-sm-2" type="text" name="search_id" placeholder="Search a Tran. ID" required aria-label="Search"><br>
+                    <button class="btn btn-rounded btn-sm my-0 rounded-pill" name="search" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <?php 
+            if(isset($_GET['InvalidID'])){
+                $Message = $_GET['InvalidID'];
+                $Message = "Invalid Transaction ID. No such a record in the Database.";
+
+        ?>
+        <div class="alert alert-primary font-weight-bold h5 text-center">
+            <?php echo $Message ?>
+        </div>
+        <?php  
+            }
+        ?>
+
+
+        <?php 
+            if ($search_result_id != ""):
+        ?>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class=" ">
+                            <tr class="text-center ">
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </thead>
+                        <tr class="">
+                            <td><?php echo $search_result_id; ?></td>
+                            <td class="font-weight-bold">$<?php echo $search_result_trans; ?></td>
+                            <td class="font-weight-bold"><?php echo $search_result_date; ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <?php 
+            else:
+        ?>
+        
+        <?php endif; ?>
+        <hr style="width: 70%;">
 
         <!-- Content Row -->
         <div class="row">
@@ -94,14 +144,15 @@ include 'controllers/dashController.php';
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2 flip-box-front">
-                                <div class="text-xs font-weight-bold  text-uppercase p-1 mb-1">Balance</div>
+                                <div class="h5 font-weight-bold  text-uppercase p-1 mb-1">Balance</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $balanceIC1; ?></div>
                             </div>
-                            <div class="col mr-2 flip-box-back">
+                            <div class="col pr-5 flip-box-back">
                                 <div class="text-xs font-weight-bold  text-uppercase p-1 mb-1">$<?php  echo $balanceIC1; ?></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">This is calculated by subtracting expenses from income.</div>
+                                <div class="h5 mb-0 ">This is calculated by subtracting expenses from income.</div>
                             </div>
                             <div class="col-auto">
+                                <i class="fas fa-2x fa-balance-scale"></i>
                             </div>
                         </div>
                     </div>
@@ -114,15 +165,15 @@ include 'controllers/dashController.php';
                         <div class="card-body ">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2 flip-box-front">
-                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Total Income </div>
+                                    <div class="h5 font-weight-bold text-uppercase p-1 mb-1">Total Income </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $incomeIC1; ?> </div>
                                 </div>
-                                <div class="col mr-2 flip-box-back">
+                                <div class="col pr-5 flip-box-back">
                                     <div class="text-xs font-weight-bold  text-uppercase mb-1">$<?php  echo $incomeIC1; ?> </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">This is your cumulative reported income amount since you joined. </div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                    <i class="fas fa-2x fa-money-bill-wave"></i>
                                 </div>
                             </div>
                         </div>
@@ -136,15 +187,15 @@ include 'controllers/dashController.php';
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2 flip-box-front">
-                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Total EXPENSES </div>
+                                    <div class="h5 font-weight-bold text-uppercase p-1 mb-1">Total EXPENSES </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $expenseIC1; ?></div>
                                 </div>
-                                <div class="col mr-2 flip-box-back">
-                                    <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">$<?php  echo $expenseIC1; ?></div>
+                                <div class="col pr-5 flip-box-back">
+                                    <div class="text-lg font-weight-bold text-uppercase p-1 mb-1">$<?php  echo $expenseIC1; ?></div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">This is your cumulative reported expenses amount since you joined.</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    <i class="fas fa-2x fa-money-check"></i>
                                 </div>
                             </div>
                         </div>
@@ -156,15 +207,15 @@ include 'controllers/dashController.php';
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2 flip-box-front">
-                                <div class="text-xs font-weight-bold text-uppercase p-1 mb-1">Transactions</div>
+                                <div class="h5 font-weight-bold text-uppercase p-1 mb-1">Transactions</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_number_of_transaction; ?></div>
                             </div>
-                            <div class="col mr-2 flip-box-back">
-                                <div class="text-xs font-weight-bold text-uppercase p-1 mb-1"><?php echo $total_number_of_transaction; ?></div>
+                            <div class="col pr-5 flip-box-back">
+                                <div class="text-lg font-weight-bold text-uppercase p-1 mb-1"><?php echo $total_number_of_transaction; ?></div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">This is the total number of all your income and expenses transactions.</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                <i class="fas fa-2x fa-list-ol"></i>
                             </div>
                         </div>
                     </div>
@@ -199,7 +250,7 @@ include 'controllers/dashController.php';
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-3 col-md-6 mb-4">
+                <div class="col-xl-3 col-md-6 mb-4 zoom-in">
                     <a href="IncomeDesign.php">
                         <div class="card border-left-primary border-left-primary-income shadow h-100 py-2">
                             <div class="card-body">
@@ -209,31 +260,31 @@ include 'controllers/dashController.php';
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_income; ?> </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-2x fa-search-dollar"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-xl-3 col-md-6 mb-4">
+                <div class="col-xl-3 col-md-6 mb-4 zoom-in">
                     <a href="IncomeDesign.php">
                         <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold  text-uppercase mb-1"># of transactions</div>
+                                        <div class="text-xs font-weight-bold  text-uppercase mb-1">Transactions</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_income_trans; ?> </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="far fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-2x fa-coins"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-xl-3 col-md-6 mb-4">
+                <div class="col-xl-3 col-md-6 mb-4 zoom-in">
                     <a href="ExpensesDesign.php">
                         <div class="card border-left-primary border-left-primary-expense shadow h-100 py-2">
                             <div class="card-body">
@@ -243,24 +294,24 @@ include 'controllers/dashController.php';
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">$<?php  echo $last_month_expense; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-2x fa-file-invoice-dollar"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-xl-3 col-md-6 mb-4">
+                <div class="col-xl-3 col-md-6 mb-4 zoom-in">
                     <a href="ExpensesDesign.php">
                         <div class="card border-left-primary border-left-primary-total shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-uppercase mb-1"># of transactions </div>
+                                        <div class="text-xs font-weight-bold text-uppercase mb-1">Transactions </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $last_month_expense_trans; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-2x fa-coins"></i>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +343,7 @@ include 'controllers/dashController.php';
                             <?php while ($row = $result->fetch_assoc() ): ?>
                             <tr class="table-success zoom-in">
                                 <td><?php echo $row['income_trans_id']; ?></td>
-                                <td class="font-weight-bold"><?php echo $row['income']; ?></td>
+                                <td class="font-weight-bold"><?php echo number_format($row['income'], 2,'.', ','); ?></td>
                                 <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                             </tr>
                             <?php endwhile; ?>
@@ -320,7 +371,7 @@ include 'controllers/dashController.php';
                             <?php while ($row = $result_expense->fetch_assoc() ): ?>
                             <tr class="table-danger zoom-in">
                                 <td><?php echo $row['expense_trans_id']; ?></td>
-                                <td class="font-weight-bold"><?php echo $row['expense']; ?></td>
+                                <td class="font-weight-bold"><?php echo number_format($row['expense'], 2,'.', ','); ?></td>
                                 <td class="font-weight-bold"><?php echo $row['timestamp']; ?></td>
                             </tr>
                             <?php endwhile; ?>
@@ -365,7 +416,7 @@ include 'controllers/dashController.php';
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $accomplished_task_total; ?></div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -384,7 +435,7 @@ include 'controllers/dashController.php';
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800"><?php  echo $unaccomplished_task_total; ?></div>
                                             </div>
                                             <div class="col-auto">
-                                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -413,9 +464,29 @@ include 'controllers/dashController.php';
             </div>
         </div>
     </div>
+    <br>
+    <hr style="width: 70%;">
 
 
-
+    <footer class="page-footer font-small unique-color-dark bg-light pt-4">
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <a class="nav-link h5" href="IncomeDesign.php">ADD INCOME</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link h5" href="ExpensesDesign.php">ADD EXPENSES</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link h5" href="brainstorming.php">TASKS</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <p>&copy; 2020 Copyright: CSI-3370 TEAM 2</p>
+        </div>
+    </footer>
 
 
     <!-- Bootstrap JS library -->
@@ -477,7 +548,5 @@ include 'controllers/dashController.php';
         chart.draw(data, options);
       };
     </script>
-
 </body>
-
 </html>

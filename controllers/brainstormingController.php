@@ -32,7 +32,4 @@ if (isset($_GET['done'])) {
 	header('location: brainstorming.php?finished_task');
 }
 
-
-
-
 ?>

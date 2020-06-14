@@ -14,6 +14,4 @@ if ($num_of_users->num_rows != 0) {
     }
 }
 
-
-
 ?>

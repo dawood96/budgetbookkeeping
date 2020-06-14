@@ -25,7 +25,7 @@ if (isset($_POST['add_income'])) {
     $date = mysqli_real_escape_string($conn, $_POST['date']);
 
     //Validations for characters
-    if (!is_numeric($income) ){
+    if (!is_numeric($income) || $income < 0 ){
         header ("location: IncomeDesign.php?invalid");
         exit();
     } else {
@@ -63,15 +63,19 @@ if(isset($_GET['edit'])){
 //this is for Update button in ADD income page
 if (isset($_POST['update'])){
     $id_trans = $_POST['id'];
-
     $id_trsn = mysqli_real_escape_string($conn, $_POST['id']);
     $income = mysqli_real_escape_string($conn, $_POST['incomeAmount']);
     $comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
+    if (!is_numeric($income) || $income < 0 ){
+        header ("location: IncomeDesign.php?invalid");
+        exit();
+    } else {
 
-    $query1 = "UPDATE csi3370_income_trans SET income='$income', timestamp='$date', comment='$comment' where user_id = '$user_id' AND income_trans_id = '$id_trans'";
-    mysqli_query($conn, $query1);
-    header('location: IncomeDesign.php?updated');
+        $query1 = "UPDATE csi3370_income_trans SET income='$income', timestamp='$date', comment='$comment' where user_id = '$user_id' AND income_trans_id = '$id_trans'";
+        mysqli_query($conn, $query1);
+        header('location: IncomeDesign.php?updated');
+    }
 }
 
 ?>

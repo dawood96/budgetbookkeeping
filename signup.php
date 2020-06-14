@@ -123,23 +123,23 @@
 
                     <div class="form-group">
                         <label for="FName">First Name</label>
-                        <input type="text" name="FName" value="" class="form-control form-control-lg">
+                        <input type="text" placeholder="Enter Your First Name" name="FName" value="" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label for="LName">Last Name</label>
-                        <input type="text" name="LName" value="" class="form-control form-control-lg">
+                        <input type="text" placeholder="Enter Your Last Name" name="LName" value="" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" value="" class="form-control form-control-lg">
+                        <input type="text"placeholder="Enter Your Email Address"  name="email" value="" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control form-control-lg">
+                        <input type="password" placeholder="Enter a Password" name="password" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <label for="passwordConf">Confirm Password</label>
-                        <input type="password" name="passwordConf" class="form-control form-control-lg">
+                        <input type="password" placeholder="Conform your Password" name="passwordConf" class="form-control form-control-lg">
                     </div>
                     <div class="form-group">
                         <button type="submit" name="signup" class="btn btn-primary btn-block btn-lg">Sign Up</button>
@@ -151,12 +151,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
     <!-- Bootstrap JS library -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

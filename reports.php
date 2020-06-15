@@ -27,7 +27,7 @@
 
 </head>
 
-<body id="" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="reports_page" data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top top-nav">
   <a class="navbar-brand" href="#">Welcome, <?php  echo $_SESSION['FName'];?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,16 +71,16 @@
    });
    </script>
 
-    <form method='post' action=''>
-     Start Date <input type='text' class='dateFilter' name='fromDate' placeholder="YYYY-MM-DD" value='<?php if(isset($_POST['fromDate'])) echo $_POST['fromDate']; ?>'>
-     End Date <input type='text' class='dateFilter' name='endDate' placeholder="YYYY-MM-DD" value='<?php if(isset($_POST['endDate'])) echo $_POST['endDate']; ?>'>
-     <input type='submit' name='but_search' value='Search'>
+    <form method='post' action='' class="input_form">
+     Start Date <input class="inputArea" width="10%" type='text' class='dateFilter' name='fromDate' placeholder="YYYY-MM-DD" value='<?php if(isset($_POST['fromDate'])) echo $_POST['fromDate']; ?>'>
+  </br></br>End Date <input class="inputArea" type='text' class='dateFilter' name='endDate' placeholder="YYYY-MM-DD" value='<?php if(isset($_POST['endDate'])) echo $_POST['endDate']; ?>'>
+  </br></br> <input class="btn btn-rounded btn-sm my-0 rounded-pill" type='submit' name='but_search' value='Search'>
    </form>
    </br>
-   <button onclick="window.print();return false;">Print</button>
+   <button class="btn btn-rounded btn-sm my-0 rounded-pill" onclick="window.print();return false;">Print</button>
    </br></br>
    <?php
-       //$employeesRecords= "";
+       
        $emp_query = "SELECT * FROM csi3370_income_trans WHERE 1 ";
        $emp_query1 = "SELECT * FROM csi3370_expenses_trans WHERE 1 ";
 
@@ -105,7 +105,7 @@
         if(mysqli_num_rows($IncomeReports) > 0){
           echo "<h3>Income</h3>";
           //echo "<table style='margin-left: 500px; margin-right: auto;'>";
-          echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr style='background-color:gray;'><th  style='padding: 5px;'>Income ID</th><th>Date</th><th>Amount</th><th>Comment</th></tr>";
+          echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr style='background-color:white;'><th  style='padding: 5px;'>Income ID</th><th>Date</th><th>Amount</th><th>Comment</th></tr>";
           while($empRecord = mysqli_fetch_assoc($IncomeReports)){
             $id = $empRecord['income_trans_id'];
             $user_id = $empRecord['user_id'];
@@ -134,7 +134,7 @@
           echo "</br>";
           echo "<h3>Expenses</h3>";
           //echo "<table>";
-          echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr style='background-color:gray;'><th   style='padding: 5px;'>Expense ID</th><th>Date</th><th>Amount</th><th>Comment</th><th>Type</th></tr>";
+          echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr style='background-color:white;'><th   style='padding: 5px;'>Expense ID</th><th>Date</th><th>Amount</th><th>Comment</th><th>Type</th></tr>";
           while($empRecord = mysqli_fetch_assoc($ExpenseReports)){
             $id = $empRecord['expense_trans_id'];
             $user_id = $empRecord['user_id'];
@@ -161,17 +161,17 @@
         echo "</table>";
         ?>
 
-
+          </br></br>
     <div class="container mt-md-5 text-center text-dark">
         <h2> Search for transactions</h2>
     </div>
 
-    <form action="reports.php" data-ajax="false" method="POST">
-        <input name="search" type="search">
-        <input type="submit" name="button" value="search">
+    <form action="reports.php" data-ajax="false" method="POST" class="input_form">
+        <input class="inputArea" size="5" name="search" type="search">
+        <input class="btn btn-rounded btn-sm my-0 rounded-pill"  type="submit" name="button" value="search">
     </form>
     </br>
-    <button onclick="window.print();return false;">Print</button>
+    <button class="btn btn-rounded btn-sm my-0 rounded-pill" onclick="window.print();return false;">Print</button>
     </br></br>
     <?php 
 
@@ -183,9 +183,9 @@
 
             if (mysqli_num_rows($query) > 0) {
                 echo "<h3>Expenses Results</h3>";
-                echo "<table><tr><th>Expense ID</th><th>Amount</th><th>Type of Expense</th><th>Comment</th><th>Date</th></tr>";
+                echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr  style='background-color:white;'><th style='padding: 5px;'>Expense ID</th><th>Amount</th><th>Type of Expense</th><th>Comment</th><th>Date</th></tr>";
                 while ($row = mysqli_fetch_array($query)) {
-                    echo "<tr><td>".$row['expense_trans_id']."</td><td>".$row['expense']."</td><td>".$row['type_of_expense']."</td><td>".$row['comment']."</td><td>".$row['timestamp']."</td></tr>";
+                    echo "<tr><td  style='padding: 5px;'>".$row['expense_trans_id']."</td><td>".$row['expense']."</td><td>".$row['type_of_expense']."</td><td>".$row['comment']."</td><td>".$row['timestamp']."</td></tr>";
                 }
                 echo "</table>";
             }else{
@@ -204,10 +204,12 @@
             $query1=mysqli_query( $conn, "select * from csi3370_income_trans where comment like '%$search%'");
 
             if (mysqli_num_rows($query1) > 0) {
+              echo "</br>";
+              echo "</br>";
                 echo "<h3>Income Results</h3>";
-                echo "<table><tr><th>Income ID</th><th>Amount</th><th>Comment</th><th>Date</th></tr>";
+                echo "<table style='margin-left: auto; margin-right: auto; width:50%;'><tr  style='background-color:white;'><th style='padding: 5px;'>Income ID</th><th>Amount</th><th>Comment</th><th>Date</th></tr>";
                 while ($row = mysqli_fetch_array($query1)) {
-                    echo "<tr><td>".$row['income_trans_id']."</td><td>".$row['income']."</td><td>".$row['comment']."</td><td>".$row['timestamp']."</td></tr>";
+                    echo "<tr><td  style='padding: 5px;'>".$row['income_trans_id']."</td><td>".$row['income']."</td><td>".$row['comment']."</td><td>".$row['timestamp']."</td></tr>";
                 }
                 echo "</table>";
             }else{

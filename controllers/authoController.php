@@ -26,6 +26,7 @@ if (isset($_POST['signup'])){
         $LName = mysqli_real_escape_string($conn, $_POST['LName']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $passwordConf = mysqli_real_escape_string($conn, $_POST['passwordConf']);
 
         //Validations for characters
         if (!preg_match("/^[a-zA-Z]*$/", $FName) || !preg_match("/^[a-zA-Z]*$/", $LName) ){
@@ -38,6 +39,9 @@ if (isset($_POST['signup'])){
                 header ("location: signup.php?Email");
                 exit();
 
+            } elseif ($password != $passwordConf) {
+                header ("location: signup.php?password");
+                exit();
             } else {
                 //check if the user available in the DB
                 $query = "SELECT * FROM csi3370_users WHERE email='".$email."'";

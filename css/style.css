@@ -240,7 +240,7 @@ body {
     text-align: center;
     letter-spacing: .1em;
     padding-top: 2%;
-    background: linear-gradient(to right, rgb(245, 245, 241) , rgb(136, 180, 161)); 
+    background: linear-gradient(to right, rgb(175, 200, 184) , rgb(136, 180, 161)); 
 }
 
 #expense_page {
@@ -254,7 +254,7 @@ body {
   text-align: center;
   letter-spacing: .1em;
   padding-top: 2%;
-  background: linear-gradient(to right, rgb(222, 224, 69) , rgb(57, 69, 243));
+  background: linear-gradient(to left, rgb(36, 221, 76) , rgb(49, 118, 246));
 }
 
 #brainstorming_page {

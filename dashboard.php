@@ -322,6 +322,9 @@ include 'controllers/dashController.php';
             
             <hr style="width: 70%;">
 
+            <h3>Your most recent 10 income and expenses transactions</h3>
+            <br>
+
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="table-responsive">

@@ -105,6 +105,20 @@
                         }
                    ?>
 
+                   <!-- password and confirm password does not match  -->
+                   <?php 
+                        if(isset($_GET['password'])){
+                            $Message = $_GET['password'];
+                            $Message = "Password and confirm password does not match";
+
+                   ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo $Message ?>
+                    </div>
+                    <?php  
+                        }
+                   ?>
+
                     <!-- success Message -->
                     <?php 
                         if(isset($_GET['success'])){

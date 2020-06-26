@@ -134,7 +134,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Jessica Mccoy</h5>
+                                <h5 class="card-title mb-0">Jessica </h5>
                                 <div class="card-text text-black-50">Project Manager</div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">David Shammas</h5>
+                                <h5 class="card-title mb-0">David</h5>
                                 <div class="card-text text-black-50">Full stack Lead Developer</div>
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Maurice Fuentes</h5>
+                                <h5 class="card-title mb-0">Maurice</h5>
                                 <div class="card-text text-black-50">Web Developer</div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Qasim Rathur</h5>
+                                <h5 class="card-title mb-0">Qasim</h5>
                                 <div class="card-text text-black-50">Web Developer</div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Samantha Belz</h5>
+                                <h5 class="card-title mb-0">Sam</h5>
                                 <div class="card-text text-black-50">Web Developer</div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                         <div class="card border-0 shadow">
                             <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-0">Tyler Kavanagh</h5>
+                                <h5 class="card-title mb-0">Tyler</h5>
                                 <div class="card-text text-black-50">Web Developer</div>
                             </div>
                         </div>

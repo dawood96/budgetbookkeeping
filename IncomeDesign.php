@@ -198,7 +198,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover font-weight-bold">
                         <thead class="thead-light table-bordered">
                             <tr class="text-center">
                                 <th class="text-center">Transaction ID</th>
@@ -218,7 +218,7 @@
                             </tr>
                         </tfoot>
                         <?php while ($row = $result->fetch_assoc()): ?>
-                        <tr>
+                        <tr class="">
                             <td><?php echo $row['income_trans_id']; ?></td>
                             <td><?php echo number_format($row['income'], 2,'.', ','); ?></td>
                             <td><?php echo $row['timestamp']; ?></td>

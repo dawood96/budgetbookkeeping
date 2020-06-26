@@ -318,7 +318,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-hover font-weight-bold">
                         <thead class="thead-light table-bordered">
                             <tr class="text-center">
                                 <th class="text-center">Transaction ID</th>
